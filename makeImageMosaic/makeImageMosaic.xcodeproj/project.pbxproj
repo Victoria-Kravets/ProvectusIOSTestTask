@@ -13,6 +13,7 @@
 		75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD651F04E50D00D9879B /* Assets.xcassets */; };
 		75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD671F04E50D00D9879B /* LaunchScreen.storyboard */; };
 		75E3FD741F04E50D00D9879B /* makeImageMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD731F04E50D00D9879B /* makeImageMosaicTests.swift */; };
+		75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD7F1F04E54400D9879B /* mickey_shy.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		75E3FD6F1F04E50D00D9879B /* makeImageMosaicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = makeImageMosaicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E3FD731F04E50D00D9879B /* makeImageMosaicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeImageMosaicTests.swift; sourceTree = "<group>"; };
 		75E3FD751F04E50D00D9879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E3FD7F1F04E54400D9879B /* mickey_shy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mickey_shy.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		75E3FD5D1F04E50D00D9879B /* makeImageMosaic */ = {
 			isa = PBXGroup;
 			children = (
+				75E3FD7E1F04E52800D9879B /* Resources */,
 				75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */,
 				75E3FD601F04E50D00D9879B /* ViewController.swift */,
 				75E3FD621F04E50D00D9879B /* Main.storyboard */,
@@ -94,6 +97,14 @@
 				75E3FD751F04E50D00D9879B /* Info.plist */,
 			);
 			path = makeImageMosaicTests;
+			sourceTree = "<group>";
+		};
+		75E3FD7E1F04E52800D9879B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75E3FD7F1F04E54400D9879B /* mickey_shy.gif */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 				75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */,
 				75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */,
 				75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */,
+				75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
