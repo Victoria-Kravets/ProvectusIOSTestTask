@@ -73,7 +73,7 @@ class ViewController: UIViewController {
        // let drawBar = makeMosaica.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         
         
-//        let drawer = ColoredBarsDrawer(viewController: vc, imageView: imageView, barSize: 50)
+        let drawer = ColoredBarsDrawer(viewController: vc, imageView: imageView, barSize: 50)
 //        let drawBar = drawer.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         //contex
 //        let outputCGImage = context?.makeImage()!

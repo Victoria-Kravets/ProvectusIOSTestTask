@@ -28,20 +28,6 @@
 			remoteGlobalIDString = 75E3FD5A1F04E50D00D9879B;
 			remoteInfo = makeImageMosaic;
 		};
-		75FE5C921F08346300299930 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75FE5C8D1F08346300299930 /* BarsDrawer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7523C3D21F0414DF002F714E;
-			remoteInfo = BarsDrawer;
-		};
-		75FE5C941F08346300299930 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75FE5C8D1F08346300299930 /* BarsDrawer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7523C3E61F0414E0002F714E;
-			remoteInfo = BarsDrawerTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +46,6 @@
 		75E3FD751F04E50D00D9879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75E3FD7F1F04E54400D9879B /* mickey_shy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mickey_shy.gif; sourceTree = "<group>"; };
 		75E3FD811F05071A00D9879B /* MakeMosaic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaic.swift; sourceTree = "<group>"; };
-		75FE5C8D1F08346300299930 /* BarsDrawer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BarsDrawer.xcodeproj; path = ../BarsDrawer/BarsDrawer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +69,6 @@
 		75E3FD521F04E50D00D9879B = {
 			isa = PBXGroup;
 			children = (
-				75FE5C8D1F08346300299930 /* BarsDrawer.xcodeproj */,
 				75E3FD5D1F04E50D00D9879B /* makeImageMosaic */,
 				75E3FD721F04E50D00D9879B /* makeImageMosaicTests */,
 				75E3FD5C1F04E50D00D9879B /* Products */,
@@ -133,15 +117,6 @@
 				755E10F51F06B647005EBE64 /* mask.png */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		75FE5C8E1F08346300299930 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				75FE5C931F08346300299930 /* BarsDrawer.app */,
-				75FE5C951F08346300299930 /* BarsDrawerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,12 +191,6 @@
 			mainGroup = 75E3FD521F04E50D00D9879B;
 			productRefGroup = 75E3FD5C1F04E50D00D9879B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 75FE5C8E1F08346300299930 /* Products */;
-					ProjectRef = 75FE5C8D1F08346300299930 /* BarsDrawer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				75E3FD5A1F04E50D00D9879B /* makeImageMosaic */,
@@ -229,23 +198,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		75FE5C931F08346300299930 /* BarsDrawer.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = BarsDrawer.app;
-			remoteRef = 75FE5C921F08346300299930 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75FE5C951F08346300299930 /* BarsDrawerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BarsDrawerTests.xctest;
-			remoteRef = 75FE5C941F08346300299930 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		75E3FD591F04E50D00D9879B /* Resources */ = {
