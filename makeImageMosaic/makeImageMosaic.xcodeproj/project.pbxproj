@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		755E10F21F066532005EBE64 /* copy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E10F11F066532005EBE64 /* copy1.png */; };
 		755E10F61F06B647005EBE64 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E10F51F06B647005EBE64 /* mask.png */; };
+		75663B301F080A9700E88540 /* MakeMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
 		75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD601F04E50D00D9879B /* ViewController.swift */; };
 		75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD621F04E50D00D9879B /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		755E10F11F066532005EBE64 /* copy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy1.png; sourceTree = "<group>"; };
 		755E10F51F06B647005EBE64 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaicTests.swift; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E3FD601F04E50D00D9879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				75E3FD671F04E50D00D9879B /* LaunchScreen.storyboard */,
 				75E3FD6A1F04E50D00D9879B /* Info.plist */,
 				75E3FD811F05071A00D9879B /* MakeMosaic.swift */,
+				75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */,
 			);
 			path = makeImageMosaic;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E3FD741F04E50D00D9879B /* makeImageMosaicTests.swift in Sources */,
+				75663B301F080A9700E88540 /* MakeMosaicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,9 @@
 //
 
 import XCTest
-
+@testable import makeImageMosaic
 class MakeMosaicTests: XCTestCase {
-    
+    let vc = ViewController()
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,15 +21,17 @@ class MakeMosaicTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let arrayOfColors: Array<Array<UInt8>> = [
+            [255, 0, 0, 255],
+            [0, 0, 0, 255],
+            [255, 0, 0, 255],
+            [0, 0, 0, 255],
+            [255, 0, 0, 255]
+        
+        ]
+        let checkingColor = UIColor(red: CGFloat(255), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(255))
+        let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }

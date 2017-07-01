@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let rect = CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: CGFloat(10.0), height: CGFloat(10.0))
+        let rect = CGRect(x: CGFloat(0.0), y: CGFloat(100.0), width: CGFloat(150.0), height: CGFloat(100.0))
         let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
 
         let data = pixelData(image: UIImage(cgImage: cropImage!))
@@ -28,7 +28,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func pixelData(image: UIImage)  {
+        
         let width = Int(image.size.width)
         let height = Int(image.size.height)
         let size = width * height
@@ -75,9 +77,6 @@ class ViewController: UIViewController {
 //        let outputImage = UIImage(cgImage: outputCGImage!, scale: image.scale, orientation: image.imageOrientation)
         //imageView.image = outputImage
         
-       
-        
-      
     }
     func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> UIColor{
         var dictionaryOfColor = [String : Int]()
@@ -100,7 +99,9 @@ class ViewController: UIViewController {
                         dictionaryOfColor.updateValue(element.value + 1 , forKey: element.key)
                     }
                     else{
-                        dictionaryOfColor[color] = 1
+                        if dictionaryOfColor[color] == nil {
+                            dictionaryOfColor[color] = 1
+                        }
                     }
                 }
             }else{
@@ -116,18 +117,19 @@ class ViewController: UIViewController {
                 resultColorString = element
             }
         }
-        var mas = [Int]()
+        var arrayOfDigitColor = [Int]()
         var resultStr: String = (resultColorString?.key)!
         var str = ""
         for char in resultStr.characters {
             if char != "+"{
             str.append(String(char))
             }else{
-                mas.append(Int(str)!)
+                arrayOfDigitColor.append(Int(str)!)
+                str = ""
             }
         }
-         mas.append(Int(str)!)
-        resultColor = UIColor(red: CGFloat(mas[0]), green: CGFloat(mas[1]), blue: CGFloat(mas[2]), alpha: CGFloat(mas[3]))
+         arrayOfDigitColor.append(Int(str)!)
+        resultColor = UIColor(red: CGFloat(arrayOfDigitColor[0]), green: CGFloat(arrayOfDigitColor[1]), blue: CGFloat(arrayOfDigitColor[2]), alpha: CGFloat(arrayOfDigitColor[3]))
         return resultColor
     }
 
