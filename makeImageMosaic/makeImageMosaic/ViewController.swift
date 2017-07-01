@@ -69,9 +69,12 @@ class ViewController: UIViewController {
         arrayOfColors.append(arrayOfColor)
         let prevailColor = findPrevailColor(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
-        let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 100)
-        let drawBar = makeMosaica.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
+        //let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 100)
+       // let drawBar = makeMosaica.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         
+        
+//        let drawer = ColoredBarsDrawer(viewController: vc, imageView: imageView, barSize: 50)
+//        let drawBar = drawer.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         //contex
 //        let outputCGImage = context?.makeImage()!
 //        let outputImage = UIImage(cgImage: outputCGImage!, scale: image.scale, orientation: image.imageOrientation)
