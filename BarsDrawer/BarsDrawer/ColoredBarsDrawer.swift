@@ -9,18 +9,18 @@
 import Foundation
 import  UIKit
 
-class ColoredBarsDrawer{
-    let _viewController: UIViewController
-    let _imageView: UIImageView
-    var _barSize: Int = 0
+open public class ColoredBarsDrawer{
+    open let _viewController: UIViewController
+    open let _imageView: UIImageView
+    open var _barSize: Int = 0
     init(viewController: UIViewController, imageView: UIImageView, barSize: Int){
         _viewController = viewController
         _imageView = imageView
         _barSize = barSize
     }
-    func draw(colors: Array<Array<UIColor>>){
-        var x = 50
-        var y = 50
+    func draw(colors: Array<Array<UIColor>>) -> UIImageView{
+        var x = 0
+        var y = 0
         for color in colors {
             for element in color {
                 let color = element
@@ -30,9 +30,9 @@ class ColoredBarsDrawer{
                 x += _barSize
             }
             y += _barSize
-            x = 50
+            x = 0
         }
-        //
+        return _imageView
     }
     func drawRectFrom(fromPoint: CGPoint, toPoint: CGPoint, color: UIColor) {
         
@@ -45,9 +45,13 @@ class ColoredBarsDrawer{
         // 4
         context?.fillPath()
         // 5
+        
         _imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         
+        
     }
+    
+
     
     
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		755E10F21F066532005EBE64 /* copy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E10F11F066532005EBE64 /* copy1.png */; };
+		755E10F61F06B647005EBE64 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E10F51F06B647005EBE64 /* mask.png */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
 		75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD601F04E50D00D9879B /* ViewController.swift */; };
 		75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD621F04E50D00D9879B /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD671F04E50D00D9879B /* LaunchScreen.storyboard */; };
 		75E3FD741F04E50D00D9879B /* makeImageMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD731F04E50D00D9879B /* makeImageMosaicTests.swift */; };
 		75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD7F1F04E54400D9879B /* mickey_shy.gif */; };
+		75E3FD821F05071A00D9879B /* MakeMosaic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD811F05071A00D9879B /* MakeMosaic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		755E10F11F066532005EBE64 /* copy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy1.png; sourceTree = "<group>"; };
+		755E10F51F06B647005EBE64 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E3FD601F04E50D00D9879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		75E3FD731F04E50D00D9879B /* makeImageMosaicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeImageMosaicTests.swift; sourceTree = "<group>"; };
 		75E3FD751F04E50D00D9879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75E3FD7F1F04E54400D9879B /* mickey_shy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mickey_shy.gif; sourceTree = "<group>"; };
+		75E3FD811F05071A00D9879B /* MakeMosaic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 				75E3FD651F04E50D00D9879B /* Assets.xcassets */,
 				75E3FD671F04E50D00D9879B /* LaunchScreen.storyboard */,
 				75E3FD6A1F04E50D00D9879B /* Info.plist */,
+				75E3FD811F05071A00D9879B /* MakeMosaic.swift */,
 			);
 			path = makeImageMosaic;
 			sourceTree = "<group>";
@@ -102,7 +109,9 @@
 		75E3FD7E1F04E52800D9879B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				755E10F11F066532005EBE64 /* copy1.png */,
 				75E3FD7F1F04E54400D9879B /* mickey_shy.gif */,
+				755E10F51F06B647005EBE64 /* mask.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -194,8 +203,10 @@
 			files = (
 				75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */,
 				75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */,
+				755E10F21F066532005EBE64 /* copy1.png in Resources */,
 				75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */,
 				75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */,
+				755E10F61F06B647005EBE64 /* mask.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */,
+				75E3FD821F05071A00D9879B /* MakeMosaic.swift in Sources */,
 				75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WVZ5Q86439;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)ColoredBarsDrawer/**";
 				INFOPLIST_FILE = makeImageMosaic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.makeImageMosaic";
@@ -369,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WVZ5Q86439;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)ColoredBarsDrawer/**";
 				INFOPLIST_FILE = makeImageMosaic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.makeImageMosaic";
@@ -426,6 +440,7 @@
 				75E3FD7A1F04E50D00D9879B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75E3FD7B1F04E50D00D9879B /* Build configuration list for PBXNativeTarget "makeImageMosaicTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +449,7 @@
 				75E3FD7D1F04E50D00D9879B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

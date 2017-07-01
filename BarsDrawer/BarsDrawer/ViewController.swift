@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+
     let colors: [[UIColor]] =
         [
             [UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)],
@@ -25,8 +26,17 @@ class ViewController: UIViewController {
         let viewController = UIViewController()
         let barSize = 100
         let drawer = ColoredBarsDrawer(viewController: viewController, imageView: mainImageView, barSize: barSize)
-        drawer.draw(colors: colors)
-        
+        let image = drawer.draw(colors: colors)
+        if let data = UIImagePNGRepresentation(mainImageView.image!){
+            let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
+            print(filename)
+            try? data.write(to: filename)
+        }
+    }
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
     
     override func didReceiveMemoryWarning() {
