@@ -9,16 +9,16 @@
 import Foundation
 import  UIKit
 
-open public class ColoredBarsDrawer{
-    open let _viewController: UIViewController
-    open let _imageView: UIImageView
-    open var _barSize: Int = 0
-    init(viewController: UIViewController, imageView: UIImageView, barSize: Int){
+public class ColoredBarsDrawer{
+    public let _viewController: UIViewController
+    public let _imageView: UIImageView
+    public var _barSize: Int = 0
+    public init(viewController: UIViewController, imageView: UIImageView, barSize: Int){
         _viewController = viewController
         _imageView = imageView
         _barSize = barSize
     }
-    func draw(colors: Array<Array<UIColor>>) -> UIImageView{
+    public func draw(colors: Array<Array<UIColor>>) -> UIImageView{
         var x = 0
         var y = 0
         for color in colors {
@@ -34,7 +34,7 @@ open public class ColoredBarsDrawer{
         }
         return _imageView
     }
-    func drawRectFrom(fromPoint: CGPoint, toPoint: CGPoint, color: UIColor) {
+    public func drawRectFrom(fromPoint: CGPoint, toPoint: CGPoint, color: UIColor) {
         
         UIGraphicsBeginImageContext(_viewController.view.frame.size) // created grafic context and set size = view.frame
         let context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
