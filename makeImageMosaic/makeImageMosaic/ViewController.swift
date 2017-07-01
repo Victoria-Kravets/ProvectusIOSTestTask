@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let rect = CGRect(x: CGFloat(0.0), y: CGFloat(100.0), width: CGFloat(300.0), height: CGFloat(100.0))
+        let rect = CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: CGFloat(10.0), height: CGFloat(10.0))
         let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
 
         let data = pixelData(image: UIImage(cgImage: cropImage!))
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func pixelData(image: UIImage) -> Array<UIColor> {
+    func pixelData(image: UIImage)  {
         let width = Int(image.size.width)
         let height = Int(image.size.height)
         let size = width * height
@@ -42,18 +42,20 @@ class ViewController: UIViewController {
                                 bytesPerRow: 4 * width,
                                 space: colorSpace,
                                 bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
-       
+        let cgImage = image.cgImage
+        context?.draw(cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
         
-        var arrayOfColors = [UIColor]()
+        var arrayOfColors = [[UInt8]()]
         var arrayOfColor = [UInt8]()
         arrayOfColor.removeAll()
+        arrayOfColors.removeAll()
         for item in pixelData {
             if arrayOfColors.isEmpty && arrayOfColor.isEmpty{
                 arrayOfColor.append(UInt8(item))
             }else{
                 if arrayOfColor.count == 4{
-                    let color = UIColor(red: CGFloat(arrayOfColor[0]), green: CGFloat(arrayOfColor[1]), blue: CGFloat(arrayOfColor[2]), alpha: CGFloat(arrayOfColor[3]) / 255)
-                    arrayOfColors.append(color)
+                    
+                    arrayOfColors.append(arrayOfColor)
                     arrayOfColor.removeAll()
                     arrayOfColor.append(UInt8(item))
                 }
@@ -62,12 +64,11 @@ class ViewController: UIViewController {
                 }
             }
         }
-        let color = UIColor(red: CGFloat(arrayOfColor[0]), green: CGFloat(arrayOfColor[1]), blue: CGFloat(arrayOfColor[2]), alpha: CGFloat(arrayOfColor[3]) / 255)
-        arrayOfColors.append(color)
+        arrayOfColors.append(arrayOfColor)
         let prevailColor = findPrevailColor(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
         let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 100)
-        let drawBar = makeMosaica.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: 100, y: 100), color: prevailColor)
+        let drawBar = makeMosaica.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         
         //contex
 //        let outputCGImage = context?.makeImage()!
@@ -75,13 +76,24 @@ class ViewController: UIViewController {
         //imageView.image = outputImage
         
        
-        //let cgImage = image.cgImage
-       // context?.draw(outputCGImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
-      return arrayOfColors
+        
+      
     }
-    func findPrevailColor(arrayOfColors: Array<UIColor>) -> UIColor{
-        var dictionaryOfColor = [UIColor: Int]()
+    func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> UIColor{
+        var dictionaryOfColor = [String : Int]()
+        var arrayOfStringColor = [String]()
+        var colorStrValue = ""
         for color in arrayOfColors {
+            colorStrValue.append(String(color[0]) + "+")
+            colorStrValue.append(String(color[1]) + "+")
+            colorStrValue.append(String(color[2]) + "+")
+            colorStrValue.append(String(color[3]))
+            arrayOfStringColor.append(colorStrValue)
+            colorStrValue = ""
+        }
+        
+        
+        for color in arrayOfStringColor {
             if !dictionaryOfColor.isEmpty{
                 for element in dictionaryOfColor {
                     if element.key == color{
@@ -97,15 +109,26 @@ class ViewController: UIViewController {
             
             
         }
-        var resultColor = dictionaryOfColor.first
-        
+        var resultColorString = dictionaryOfColor.first
+        var resultColor = UIColor()
         for element in dictionaryOfColor {
-            if element.value > (resultColor?.value)! {
-                resultColor = element
+            if element.value > (resultColorString?.value)! {
+                resultColorString = element
             }
         }
-        
-        return (resultColor?.key)!
+        var mas = [Int]()
+        var resultStr: String = (resultColorString?.key)!
+        var str = ""
+        for char in resultStr.characters {
+            if char != "+"{
+            str.append(String(char))
+            }else{
+                mas.append(Int(str)!)
+            }
+        }
+         mas.append(Int(str)!)
+        resultColor = UIColor(red: CGFloat(mas[0]), green: CGFloat(mas[1]), blue: CGFloat(mas[2]), alpha: CGFloat(mas[3]))
+        return resultColor
     }
 
 }
