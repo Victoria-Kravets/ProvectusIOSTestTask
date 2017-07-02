@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let mostCommonColor = getMostCommonColorAmongBars(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
         let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 20)
-        let drawBar = makeMosaica.draw(colors: arrayOfColors)
+        let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
 
         
         

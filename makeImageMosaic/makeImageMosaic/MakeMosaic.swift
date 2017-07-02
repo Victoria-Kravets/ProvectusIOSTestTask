@@ -12,46 +12,41 @@ import UIKit
 class MakeMosaic{
         open let _viewController: UIViewController
         open let _imageView: UIImageView
-        open var _barSize: Int = 0
+        open var _barSize = 0
+        private var context: CGContext!
+    
         init(viewController: UIViewController, imageView: UIImageView, barSize: Int){
             _viewController = viewController
             _imageView = imageView
+            _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: _viewController.view.frame.size.width, height: _viewController.view.frame.size.height))// point borders where posible to drawing
+            
+            UIGraphicsBeginImageContext(_viewController.view.frame.size) // created grafic context and set size = view.frame
+            context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
+            
             _barSize = barSize
         }
-        func draw(colors: Array<Array<Array<UInt8>>>) -> UIImageView{
+        func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImageView{
             var x = 0
             var y = 0
             var arrayColorOfDigit = [UInt8]()
             arrayColorOfDigit.removeAll()
-            for color in colors {
-                for element in color {
-                    drawRectFrom(fromPoint: CGPoint(x: x, y: y), toPoint: CGPoint(x: _barSize, y: _barSize), color: element)
+            for row in colorsRows {
+                for barColor in row {
+                    drawRectFrom(x: x, y: y, width: _barSize, height: _barSize, color: barColor)
                     x += _barSize
                 }
                 y += _barSize
                 x = 0
             }
+            _imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             return _imageView
         }
-        func drawRectFrom(fromPoint: CGPoint, toPoint: CGPoint, color: Array<UInt8>) {
-            
-            UIGraphicsBeginImageContext(_viewController.view.frame.size) // created grafic context and set size = view.frame
-            let context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
-            let rect = CGRect(x: fromPoint.x, y: fromPoint.y, width: toPoint.x, height: toPoint.y) //rect
-            _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: _viewController.view.frame.size.width, height: _viewController.view.frame.size.height))// point borders where posible to drawing
-            context?.addRects([rect])
-            context?.setFillColor(red: CGFloat(color[0]), green: CGFloat(color[1]), blue: CGFloat(color[2]), alpha: CGFloat(color[3]))
-            // 4)
-            context?.fillPath()
-            // 5
-            
-            _imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            
-            
+    
+        func drawRectFrom(x: Int, y: Int, width: Int, height: Int, color: Array<UInt8>) {
+            let rect = CGRect(x: x, y: y, width: width, height: height) //rect
+            context.addRects([rect])
+            context.setFillColor(red: CGFloat(color[0]), green: CGFloat(color[1]), blue: CGFloat(color[2]), alpha: CGFloat(color[3]))
+            context.fillPath()
         }
-        
-        
-        
-        
-        
+
 }
