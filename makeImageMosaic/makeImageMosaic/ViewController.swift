@@ -10,26 +10,64 @@ import UIKit
 import BarsDrawer
 
 class ViewController: UIViewController {
-    let originalImage = UIImage(named: "copy1.png")!
-    
+    let originalImage = UIImage(named: "TomandJerry.jpg")!
+    //let originalImage = UIImage(named: "copy2.png")!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let arrayOfColors = getArrayOfColors(image: originalImage)
+        let vc = UIViewController()
+        let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 10)
+        let drawBar = makeMosaica.draw(colors: arrayOfColors)
 
-        let rect = CGRect(x: CGFloat(0.0), y: CGFloat(100.0), width: CGFloat(150.0), height: CGFloat(100.0))
-        let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
-
-        let data = pixelData(image: UIImage(cgImage: cropImage!))
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
+        let size = image.size
+        var height = size.height
+        var width = size.width
+        var sizePath: CGFloat = 10
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var arrayOfOneColor = [[UInt8]()]
+        var arrayOfColors = [[[UInt8]()]]
+        arrayOfColors.removeAll()
+        arrayOfOneColor.removeAll()
+        while height > 0 {
+            while width > 0 {
+                let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
+                let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
+                let color = pixelData(image: UIImage(cgImage: cropImage!), x: x, y: y)
+                arrayOfOneColor.append(color)
+                sizePath = 10
+                if width >= 10 {
+                    width -= sizePath
+                }else{
+                    sizePath = width
+                    width -= width
+                }
+                x += sizePath
+            }
+            arrayOfColors.append(arrayOfOneColor)
+            arrayOfOneColor.removeAll()
+            sizePath = 10
+            if height >= 10 {
+                height -= sizePath
+            }else{
+                sizePath = height
+                height -= height
+            }
+            y += sizePath
+            x = 0
+            width = size.width
+        }
+        
+      return arrayOfColors
     }
     
-    func pixelData(image: UIImage)  {
+    
+    func pixelData(image: UIImage, x: CGFloat, y: CGFloat) -> Array<UInt8>  {
         
         let width = Int(image.size.width)
         let height = Int(image.size.height)
@@ -62,26 +100,30 @@ class ViewController: UIViewController {
                     arrayOfColor.append(UInt8(item))
                 }
                 else{
-                    arrayOfColor.append(UInt8(item))
+                    //if arrayOfColor.count == 3{
+                       // let alpha = 1
+                        //arrayOfColor.append(UInt8(alpha))
+                   // }else{
+                        arrayOfColor.append(UInt8(item))
+                //}
+                    
                 }
             }
         }
         arrayOfColors.append(arrayOfColor)
         let prevailColor = findPrevailColor(arrayOfColors: arrayOfColors)
-        let vc = UIViewController()
-        //let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 100)
-       // let drawBar = makeMosaica.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         
         
-        let drawer = ColoredBarsDrawer(viewController: vc, imageView: imageView, barSize: 50)
+        
+//        let drawer = ColoredBarsDrawer(viewController: vc, imageView: imageView, barSize: 10)
 //        let drawBar = drawer.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
         //contex
 //        let outputCGImage = context?.makeImage()!
 //        let outputImage = UIImage(cgImage: outputCGImage!, scale: image.scale, orientation: image.imageOrientation)
         //imageView.image = outputImage
-        
+       return prevailColor
     }
-    func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> UIColor{
+    func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> Array<UInt8>{
         var dictionaryOfColor = [String : Int]()
         var arrayOfStringColor = [String]()
         var colorStrValue = ""
@@ -120,20 +162,20 @@ class ViewController: UIViewController {
                 resultColorString = element
             }
         }
-        var arrayOfDigitColor = [Int]()
+        var arrayOfDigitColor = [UInt8]()
         var resultStr: String = (resultColorString?.key)!
         var str = ""
         for char in resultStr.characters {
             if char != "+"{
             str.append(String(char))
             }else{
-                arrayOfDigitColor.append(Int(str)!)
+                arrayOfDigitColor.append(UInt8(str)!)
                 str = ""
             }
         }
-         arrayOfDigitColor.append(Int(str)!)
-        resultColor = UIColor(red: CGFloat(arrayOfDigitColor[0]), green: CGFloat(arrayOfDigitColor[1]), blue: CGFloat(arrayOfDigitColor[2]), alpha: CGFloat(arrayOfDigitColor[3]))
-        return resultColor
+         arrayOfDigitColor.append(UInt8(str)!)
+//        resultColor = UIColor(red: CGFloat(arrayOfDigitColor[0]), green: CGFloat(arrayOfDigitColor[1]), blue: CGFloat(arrayOfDigitColor[2]), alpha: CGFloat(arrayOfDigitColor[3]))
+        return arrayOfDigitColor
     }
 
 }

@@ -18,15 +18,14 @@ class MakeMosaic{
             _imageView = imageView
             _barSize = barSize
         }
-        func draw(colors: Array<Array<UIColor>>) -> UIImageView{
+        func draw(colors: Array<Array<Array<UInt8>>>) -> UIImageView{
             var x = 0
             var y = 0
+            var arrayColorOfDigit = [UInt8]()
+            arrayColorOfDigit.removeAll()
             for color in colors {
                 for element in color {
-                    let color = element
-                    
-                    
-                    drawRectFrom(fromPoint: CGPoint(x: x, y: y), toPoint: CGPoint(x: _barSize, y: _barSize), color: color)
+                    drawRectFrom(fromPoint: CGPoint(x: x, y: y), toPoint: CGPoint(x: _barSize, y: _barSize), color: element)
                     x += _barSize
                 }
                 y += _barSize
@@ -34,15 +33,15 @@ class MakeMosaic{
             }
             return _imageView
         }
-        func drawRectFrom(fromPoint: CGPoint, toPoint: CGPoint, color: UIColor) {
+        func drawRectFrom(fromPoint: CGPoint, toPoint: CGPoint, color: Array<UInt8>) {
             
             UIGraphicsBeginImageContext(_viewController.view.frame.size) // created grafic context and set size = view.frame
             let context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
             let rect = CGRect(x: fromPoint.x, y: fromPoint.y, width: toPoint.x, height: toPoint.y) //rect
             _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: _viewController.view.frame.size.width, height: _viewController.view.frame.size.height))// point borders where posible to drawing
             context?.addRects([rect])
-            context?.setFillColor(color.cgColor)
-            // 4
+            context?.setFillColor(red: CGFloat(color[0]), green: CGFloat(color[1]), blue: CGFloat(color[2]), alpha: CGFloat(color[3]))
+            // 4)
             context?.fillPath()
             // 5
             

@@ -50,7 +50,30 @@ public class ColoredBarsDrawer{
         
         
     }
-    
+//    func draw(colors: Array<Array<UIColor>>, width: Int, height: Int) -> UIImageView{
+//        var x = 0
+//        var y = 0
+//        var widthCurrent = width
+//        while height > 0{
+//            while width > 0 {
+//                for color in colors {
+//                    for element in color {
+//                        let color = element
+//                        
+//                        
+//                        drawRectFrom(fromPoint: CGPoint(x: x, y: y), toPoint: CGPoint(x: _barSize, y: _barSize), color: color)
+//                        x += _barSize
+//                    }
+//                    y += _barSize
+//                    x = 0
+//                }
+//                widthCurrent -= 1
+//            }
+//            widthCurrent = width
+//        }
+//        return _imageView
+//
+//    }
 
     
     

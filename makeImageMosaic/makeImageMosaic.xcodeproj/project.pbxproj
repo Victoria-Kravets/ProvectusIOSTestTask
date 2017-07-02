@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		755CA35A1F096773009608A4 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 755CA3591F096773009608A4 /* 2.png */; };
+		755CA35C1F096806009608A4 /* TomJerry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 755CA35B1F096806009608A4 /* TomJerry.jpg */; };
+		755CA35E1F097030009608A4 /* TomandJerry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 755CA35D1F097030009608A4 /* TomandJerry.jpg */; };
 		755E10F21F066532005EBE64 /* copy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E10F11F066532005EBE64 /* copy1.png */; };
 		755E10F61F06B647005EBE64 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 755E10F51F06B647005EBE64 /* mask.png */; };
 		75663B301F080A9700E88540 /* MakeMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */; };
+		75E15E011F0985C20071DBF1 /* copy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E15E001F0985C20071DBF1 /* copy2.png */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
 		75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD601F04E50D00D9879B /* ViewController.swift */; };
 		75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD621F04E50D00D9879B /* Main.storyboard */; };
@@ -31,9 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		755CA3591F096773009608A4 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		755CA35B1F096806009608A4 /* TomJerry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TomJerry.jpg; sourceTree = "<group>"; };
+		755CA35D1F097030009608A4 /* TomandJerry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TomandJerry.jpg; sourceTree = "<group>"; };
 		755E10F11F066532005EBE64 /* copy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy1.png; sourceTree = "<group>"; };
 		755E10F51F06B647005EBE64 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaicTests.swift; sourceTree = "<group>"; };
+		75E15E001F0985C20071DBF1 /* copy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy2.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E3FD601F04E50D00D9879B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				755E10F11F066532005EBE64 /* copy1.png */,
+				75E15E001F0985C20071DBF1 /* copy2.png */,
+				755CA35B1F096806009608A4 /* TomJerry.jpg */,
+				755CA3591F096773009608A4 /* 2.png */,
+				755CA35D1F097030009608A4 /* TomandJerry.jpg */,
 				75E3FD7F1F04E54400D9879B /* mickey_shy.gif */,
 				755E10F51F06B647005EBE64 /* mask.png */,
 			);
@@ -206,10 +218,14 @@
 			files = (
 				75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */,
 				75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */,
+				755CA35A1F096773009608A4 /* 2.png in Resources */,
+				755CA35E1F097030009608A4 /* TomandJerry.jpg in Resources */,
 				755E10F21F066532005EBE64 /* copy1.png in Resources */,
+				75E15E011F0985C20071DBF1 /* copy2.png in Resources */,
 				75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */,
 				75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */,
 				755E10F61F06B647005EBE64 /* mask.png in Resources */,
+				755CA35C1F096806009608A4 /* TomJerry.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,20 +13,40 @@ class ViewController: UIViewController {
 
     let colors: [[UIColor]] =
         [
-            [UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)],
-            [UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0)],
-            [UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)],
-            [UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0)]
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
+            [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
+            [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
+            [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)]
     ]
-    
+    let colors2: [[UIColor]] =
+        [
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
+            [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
+            
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
+            //
+            [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
+            //
+            
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
+    //
+            [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
+            //
+            
+            [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
+            
+            ]
+
     
     @IBOutlet weak var mainImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let viewController = UIViewController()
-        let barSize = 100
+        let barSize = 10
         let drawer = ColoredBarsDrawer(viewController: viewController, imageView: mainImageView, barSize: barSize)
-        let image = drawer.draw(colors: colors)
+        let image = drawer.draw(colors: colors2)
         if let data = UIImagePNGRepresentation(mainImageView.image!){
             let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
             print(filename)
