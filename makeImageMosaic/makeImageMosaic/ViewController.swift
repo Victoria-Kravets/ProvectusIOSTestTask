@@ -10,18 +10,31 @@ import UIKit
 import BarsDrawer
 
 class ViewController: UIViewController {
-    let originalImage = UIImage(named: "TomandJerry.jpg")!
+    let originalImage = UIImage(named: "jerry.png")!
     //let originalImage = UIImage(named: "copy2.png")!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let arrayOfColors = getArrayOfColors(image: originalImage)
+        let mostCommonColor = getMostCommonColorAmongBars(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
         let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 10)
         let drawBar = makeMosaica.draw(colors: arrayOfColors)
 
         
         
+    }
+    func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
+        var resultArray = [[UInt8]()]
+        resultArray.removeAll()
+        for color in arrayOfColors {
+            for element in color{
+                resultArray.append(element)
+            }
+            
+        }
+        let mostCommonColor = findPrevailColor(arrayOfColors: resultArray)
+        return mostCommonColor
     }
     func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
         let size = image.size
@@ -156,7 +169,7 @@ class ViewController: UIViewController {
             
         }
         var resultColorString = dictionaryOfColor.first
-        var resultColor = UIColor()
+        
         for element in dictionaryOfColor {
             if element.value > (resultColorString?.value)! {
                 resultColorString = element
