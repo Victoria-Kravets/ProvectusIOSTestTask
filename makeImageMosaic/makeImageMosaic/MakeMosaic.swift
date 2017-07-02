@@ -45,9 +45,9 @@ class MakeMosaic{
     
         func drawRectFrom(x: Int, y: Int, width: Int, height: Int, color: Array<UInt8>) {
             let rect = CGRect(x: x, y: y, width: width, height: height) //rect
-            context.addRects([rect])
             context.setFillColor(red: CGFloat(color[0]), green: CGFloat(color[1]), blue: CGFloat(color[2]), alpha: CGFloat(color[3]))
-            context.fillPath()
+            context.fill([rect])
+
         }
 
 }
