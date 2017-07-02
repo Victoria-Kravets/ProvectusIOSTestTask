@@ -39,6 +39,7 @@ class MakeMosaic{
                 x = 0
             }
             _imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
             return _imageView
         }
     
