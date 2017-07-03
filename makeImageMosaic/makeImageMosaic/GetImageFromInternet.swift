@@ -12,7 +12,7 @@ import  UIKit
 class GetImageFromInternet{
    var url = ""
     let utilityQueue = DispatchQueue.global(qos: .utility)
-    func getImage(urlName: String, _ completed: @escaping (_ data: Data)->()){
+    func getImage(urlName: String, _ completed: @escaping (_ data: Data)->(), _ error: @escaping (_ massage: String)->()){
         var image = UIImage()
         url = urlName
         Alamofire.request(url)
@@ -24,6 +24,8 @@ class GetImageFromInternet{
                     }
                 case .failure:
                     print("failure")
+                    let massage = "failure"
+                    error(massage)
                 }
             }
         

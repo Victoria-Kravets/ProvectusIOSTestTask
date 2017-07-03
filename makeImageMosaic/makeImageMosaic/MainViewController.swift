@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +21,15 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func displayImage(_ sender: UIButton) {
+        let url = textField.text
+        let viewController = ViewController()
+        viewController.url = url!
+        
+    }
+    func error(errorMessage: String){
+    print(errorMessage)
+    }
 
     /*
     // MARK: - Navigation

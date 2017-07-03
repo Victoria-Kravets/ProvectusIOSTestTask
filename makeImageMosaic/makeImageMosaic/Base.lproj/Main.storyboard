@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oNo-5C-hu6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="8aG-lM-OvB">
             <objects>
-                <viewController id="oNo-5C-hu6" sceneMemberID="viewController">
+                <viewController id="oNo-5C-hu6" customClass="MainViewController" customModule="makeImageMosaic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jEE-jd-eaE"/>
                         <viewControllerLayoutGuide type="bottom" id="S4E-My-Tj1"/>
@@ -22,13 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-Eo-DI6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-Eo-DI6">
                                 <rect key="frame" x="26" y="50" width="323" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="g9B-tZ-OyP"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input URL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0v-Uj-KIE">
@@ -46,6 +46,9 @@
                                     <constraint firstAttribute="height" constant="30" id="tqo-Tf-hfe"/>
                                 </constraints>
                                 <state key="normal" title="Display image"/>
+                                <connections>
+                                    <action selector="displayImage:" destination="oNo-5C-hu6" eventType="touchUpInside" id="0w2-p5-8zR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,6 +64,9 @@
                             <constraint firstItem="Meu-Ga-RWT" firstAttribute="top" secondItem="ddY-Eo-DI6" secondAttribute="bottom" constant="25" id="wok-um-EQW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="ddY-Eo-DI6" id="TT8-hH-xZd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxk-TE-vHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,6 +12,7 @@ import BarsDrawer
 class ViewController: UIViewController, UIScrollViewDelegate {
     let originalImage = UIImage(named: "jerry.png")!
     let url1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+    var url = ""
     let context = GetContext()
     let downloadedImage = GetImageFromInternet()
     
@@ -27,19 +28,30 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     @IBOutlet weak var imageView: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
         scrollView.addSubview(imageView)
         var image = UIImage()
-            downloadedImage.getImage(urlName: url1, { (data)-> () in
-            image = UIImage(data: data)!
-            let arrayOfColors = self.getArrayOfColors(image: image)
-            let vc = UIViewController()
-            let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
-            let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+        let successHandler = { (data: Data)-> () in
+            if data != nil{
+                image = UIImage(data: data)!
+                let arrayOfColors = self.getArrayOfColors(image: image)
+                let vc = UIViewController()
+                let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
+                let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+            }
+            
+        }
+        let errorHandler = { (massage: String)-> () in
+            if massage == "error"{
+                let mainVC = MainViewController()
+                mainVC.error(errorMessage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+            }
+        }
 
-        })
+        downloadedImage.getImage(urlName: url, successHandler, errorHandler)
        // imageView.image = image
         
     }
