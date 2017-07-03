@@ -10,20 +10,11 @@ import UIKit
 import BarsDrawer
 
 class ViewController: UIViewController {
-    let originalImage = UIImage(named: "Tom.png")!
-    //let originalImage = UIImage(named: "copy2.png")!
-    //var contextData: Array<UInt8> = []
-    var count = 0
+    let originalImage = UIImage(named: "jerry.png")!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let arr : Array<Array<Array<UInt8>>> =
-//        [
-//        [[205, 254, 206, 255], [32, 24, 206, 255],[205, 254, 206, 255],[32, 24, 206, 255]],
-//        [[32, 24, 206, 255],[205, 254, 206, 255],[32, 24, 206, 255],[205, 254, 206, 255]],
-//        [[205, 254, 206, 255], [32, 24, 206, 255],[205, 254, 206, 255],[32, 24, 206, 255]],
-//        [[32, 24, 206, 255],[205, 254, 206, 255],[32, 24, 206, 255],[205, 254, 206, 255]]
-//        ]
+
         let arrayOfColors = getArrayOfColors(image: originalImage)
         //let mostCommonColor = getMostCommonColorAmongBars(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
@@ -33,18 +24,18 @@ class ViewController: UIViewController {
         
         
     }
-//    func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
-//        var resultArray = [[UInt8]()]
-//        resultArray.removeAll()
-//        for color in arrayOfColors {
-//            for element in color{
-//                resultArray.append(element)
-//            }
-//            
-//        }
-//        let mostCommonColor = findPrevailColor(arrayOfColors: resultArray)
-//        return mostCommonColor
-//    }
+    func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
+        var resultArray = [[UInt8]()]
+        resultArray.removeAll()
+        for color in arrayOfColors {
+            for element in color{
+                resultArray.append(element)
+            }
+            
+        }
+        let mostCommonColor = findPrevailColor(arrayOfColors: resultArray)
+        return mostCommonColor
+    }
     func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
         let size = image.size
         var height = size.height
@@ -92,7 +83,6 @@ class ViewController: UIViewController {
     func getContext(image: UIImage) ->Array<UInt8> {
         let width = Int(image.size.width)
         let height = Int(image.size.height)
-        let size = width * height
         let dataSize = width * height * 4
         var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -131,16 +121,7 @@ class ViewController: UIViewController {
         }
         arrayOfColors.append(arrayOfColor)
         let prevailColor = findPrevailColor(arrayOfColors: arrayOfColors)
-        
-        
-        
-//        let drawer = ColoredBarsDrawer(viewController: vc, imageView: imageView, barSize: 10)
-//        let drawBar = drawer.drawRectFrom(fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: width, y: height), color: prevailColor)
-        //contex
-//        let outputCGImage = context?.makeImage()!
-//        let outputImage = UIImage(cgImage: outputCGImage!, scale: image.scale, orientation: image.imageOrientation)
-        //imageView.image = outputImage
-       return prevailColor
+        return prevailColor
     }
     func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> Array<UInt8>{
         var dictionaryOfColor = [String : Int]()
@@ -193,8 +174,7 @@ class ViewController: UIViewController {
             }
         }
          arrayOfDigitColor.append(UInt8(str)!)
-//        resultColor = UIColor(red: CGFloat(arrayOfDigitColor[0]), green: CGFloat(arrayOfDigitColor[1]), blue: CGFloat(arrayOfDigitColor[2]), alpha: CGFloat(arrayOfDigitColor[3]))
-        count += 1
+
         return arrayOfDigitColor
     }
 
