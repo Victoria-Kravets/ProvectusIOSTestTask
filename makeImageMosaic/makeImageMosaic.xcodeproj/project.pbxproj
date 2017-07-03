@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		75220F9C1F0A6C5D0083F823 /* Tom.png in Resources */ = {isa = PBXBuildFile; fileRef = 75220F9B1F0A6C5D0083F823 /* Tom.png */; };
 		75220FA11F0A897D0083F823 /* GetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FA01F0A897D0083F823 /* GetContext.swift */; };
+		75220FAB1F0AB2070083F823 /* GetImageFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */; };
 		75663B301F080A9700E88540 /* MakeMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */; };
 		75E15E031F099E320071DBF1 /* jerry.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E15E021F099E320071DBF1 /* jerry.png */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		75220F9B1F0A6C5D0083F823 /* Tom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tom.png; sourceTree = "<group>"; };
 		75220FA01F0A897D0083F823 /* GetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetContext.swift; sourceTree = "<group>"; };
+		75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetImageFromInternet.swift; sourceTree = "<group>"; };
 		75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaicTests.swift; sourceTree = "<group>"; };
 		75E15E021F099E320071DBF1 /* jerry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerry.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				75E3FD6A1F04E50D00D9879B /* Info.plist */,
 				75E3FD811F05071A00D9879B /* MakeMosaic.swift */,
 				75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */,
+				75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */,
 			);
 			path = makeImageMosaic;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75220FAB1F0AB2070083F823 /* GetImageFromInternet.swift in Sources */,
 				75220FA11F0A897D0083F823 /* GetContext.swift in Sources */,
 				75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */,
 				75E3FD821F05071A00D9879B /* MakeMosaic.swift in Sources */,
