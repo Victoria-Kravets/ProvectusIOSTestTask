@@ -21,20 +21,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moj-FA-VQ7">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-pe-yWP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moj-FA-VQ7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="7ww-gi-0pf"/>
+                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="centerX" secondItem="hhU-pe-yWP" secondAttribute="centerX" id="Aby-Ue-yc3"/>
+                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="leading" secondItem="hhU-pe-yWP" secondAttribute="leading" id="Ac1-L0-qsh"/>
+                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="centerY" secondItem="hhU-pe-yWP" secondAttribute="centerY" id="LCe-oL-prj"/>
+                                    <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="M9w-rP-IeT"/>
+                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="top" secondItem="hhU-pe-yWP" secondAttribute="top" id="mag-68-GjJ"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="moj-FA-VQ7" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="2Ax-tn-rL4"/>
-                            <constraint firstItem="moj-FA-VQ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8h0-Vj-dgK"/>
-                            <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="aru-j9-R1y"/>
-                            <constraint firstItem="moj-FA-VQ7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="krl-c6-iM1"/>
+                            <constraint firstItem="hhU-pe-yWP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8rO-Nm-kc9"/>
+                            <constraint firstItem="hhU-pe-yWP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KnX-SD-6fN"/>
+                            <constraint firstItem="hhU-pe-yWP" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="peY-UQ-Wpl"/>
+                            <constraint firstAttribute="trailing" secondItem="hhU-pe-yWP" secondAttribute="trailing" id="xwh-fi-N5w"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="moj-FA-VQ7" id="IWG-M5-rRC"/>
+                        <outlet property="scrollView" destination="hhU-pe-yWP" id="4Zh-ys-z3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

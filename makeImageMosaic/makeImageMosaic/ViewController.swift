@@ -9,13 +9,27 @@
 import UIKit
 import BarsDrawer
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
     let originalImage = UIImage(named: "jerry.png")!
     let context = GetContext()
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!{
+        didSet{
+            scrollView.contentSize = imageView.frame.size
+            scrollView.maximumZoomScale = 2.0
+            scrollView.minimumZoomScale = 0.1
+        }
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
     @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scrollView.delegate = self
+        scrollView.addSubview(imageView)
         let arrayOfColors = getArrayOfColors(image: originalImage)
         //let mostCommonColor = getMostCommonColorAmongBars(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
