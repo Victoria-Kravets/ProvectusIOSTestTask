@@ -11,6 +11,7 @@
 		75220FA11F0A897D0083F823 /* GetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FA01F0A897D0083F823 /* GetContext.swift */; };
 		75220FAB1F0AB2070083F823 /* GetImageFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */; };
 		75220FB21F0AB5B50083F823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75220FB11F0AB5B50083F823 /* Alamofire.framework */; };
+		75220FB71F0AECCC0083F823 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FB61F0AECCC0083F823 /* MainViewController.swift */; };
 		75663B301F080A9700E88540 /* MakeMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */; };
 		75E15E031F099E320071DBF1 /* jerry.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E15E021F099E320071DBF1 /* jerry.png */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		75220FA01F0A897D0083F823 /* GetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetContext.swift; sourceTree = "<group>"; };
 		75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetImageFromInternet.swift; sourceTree = "<group>"; };
 		75220FB11F0AB5B50083F823 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		75220FB61F0AECCC0083F823 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaicTests.swift; sourceTree = "<group>"; };
 		75E15E021F099E320071DBF1 /* jerry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerry.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				75E3FD811F05071A00D9879B /* MakeMosaic.swift */,
 				75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */,
 				75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */,
+				75220FB61F0AECCC0083F823 /* MainViewController.swift */,
 			);
 			path = makeImageMosaic;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				75220FAB1F0AB2070083F823 /* GetImageFromInternet.swift in Sources */,
 				75220FA11F0A897D0083F823 /* GetContext.swift in Sources */,
 				75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */,
+				75220FB71F0AECCC0083F823 /* MainViewController.swift in Sources */,
 				75E3FD821F05071A00D9879B /* MakeMosaic.swift in Sources */,
 				75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */,
 			);

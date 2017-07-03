@@ -7,9 +7,25 @@
 //
 
 import Foundation
+import  Alamofire
+import  UIKit
 class GetImageFromInternet{
-    
-    func getImage(url: URL){
+   var url = ""
+    let utilityQueue = DispatchQueue.global(qos: .utility)
+    func getImage(urlName: String, _ completed: @escaping (_ data: Data)->()){
+        var image = UIImage()
+        url = urlName
+        Alamofire.request(url)
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    if let data = response.result.value {
+                        completed(data)
+                    }
+                case .failure:
+                    print("failure")
+                }
+            }
         
     }
     

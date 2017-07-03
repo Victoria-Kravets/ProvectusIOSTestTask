@@ -11,8 +11,9 @@ import BarsDrawer
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     let originalImage = UIImage(named: "jerry.png")!
+    let url1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
     let context = GetContext()
-    
+    let downloadedImage = GetImageFromInternet()
     
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
@@ -30,12 +31,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         scrollView.addSubview(imageView)
-        let arrayOfColors = getArrayOfColors(image: originalImage)
-        //let mostCommonColor = getMostCommonColorAmongBars(arrayOfColors: arrayOfColors)
-        let vc = UIViewController()
-        let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 10, image: originalImage)
-        let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+        var image = UIImage()
+            downloadedImage.getImage(urlName: url1, { (data)-> () in
+            image = UIImage(data: data)!
+            let arrayOfColors = self.getArrayOfColors(image: image)
+            let vc = UIViewController()
+            let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
+            let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
 
+        })
+       // imageView.image = image
+        
     }
     func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
         var resultArray = [[UInt8]()]
@@ -63,7 +69,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         while height > 0 {
             while width > 0 {
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
-                let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
+                let cropImage: CGImage? = image.cgImage?.cropping(to: rect)
                 let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage!))
                 let colorData = pixelData(pixelData: contextOfOneBar.1 as! Array<UInt8>)
                 arrayOfOneColor.append(colorData)
