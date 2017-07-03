@@ -11,6 +11,7 @@ import BarsDrawer
 
 class ViewController: UIViewController {
     let originalImage = UIImage(named: "jerry.png")!
+    let context = GetContext()
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,6 @@ class ViewController: UIViewController {
         let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 10, image: originalImage)
         let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
 
-        
-        
     }
     func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
         var resultArray = [[UInt8]()]
@@ -51,8 +50,8 @@ class ViewController: UIViewController {
             while width > 0 {
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
                 let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
-                let contextOfOneBar = getContext(image: UIImage(cgImage: cropImage!))
-                let colorData = pixelData(pixelData: contextOfOneBar)
+                let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage!))
+                let colorData = pixelData(pixelData: contextOfOneBar.1 as! Array<UInt8>)
                 arrayOfOneColor.append(colorData)
                 sizePath = 10
                 if width >= 10 {
@@ -80,23 +79,8 @@ class ViewController: UIViewController {
       return arrayOfColors
     }
     
-    func getContext(image: UIImage) ->Array<UInt8> {
-        let width = Int(image.size.width)
-        let height = Int(image.size.height)
-        let dataSize = width * height * 4
-        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let context = CGContext(data: &pixelData,
-                                width: width,
-                                height: height,
-                                bitsPerComponent: 8,
-                                bytesPerRow: 4 * width,
-                                space: colorSpace,
-                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
-        let cgImage = image.cgImage
-        context?.draw(cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
-        return pixelData
-    }
+
+    
     func pixelData( pixelData: Array<UInt8>) -> Array<UInt8>  {
         
         
