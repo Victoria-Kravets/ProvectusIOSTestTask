@@ -12,13 +12,15 @@ import BarsDrawer
 class ViewController: UIViewController {
     let originalImage = UIImage(named: "jerry.png")!
     //let originalImage = UIImage(named: "copy2.png")!
+    //var contextData: Array<UInt8> = []
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let arrayOfColors = getArrayOfColors(image: originalImage)
         let mostCommonColor = getMostCommonColorAmongBars(arrayOfColors: arrayOfColors)
         let vc = UIViewController()
-        let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 20)
+        let makeMosaica = MakeMosaic(viewController: vc, imageView: imageView, barSize: 20, image: originalImage)
         let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
 
         
@@ -51,8 +53,9 @@ class ViewController: UIViewController {
             while width > 0 {
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
                 let cropImage: CGImage? = originalImage.cgImage?.cropping(to: rect)
-                let color = pixelData(image: UIImage(cgImage: cropImage!), x: x, y: y)
-                arrayOfOneColor.append(color)
+                let contextOfOneBar = getContext(image: UIImage(cgImage: cropImage!))
+                let colorData = pixelData(pixelData: contextOfOneBar)
+                arrayOfOneColor.append(colorData)
                 sizePath = 10
                 if width >= 10 {
                     width -= sizePath
@@ -79,9 +82,7 @@ class ViewController: UIViewController {
       return arrayOfColors
     }
     
-    
-    func pixelData(image: UIImage, x: CGFloat, y: CGFloat) -> Array<UInt8>  {
-        
+    func getContext(image: UIImage) ->Array<UInt8> {
         let width = Int(image.size.width)
         let height = Int(image.size.height)
         let size = width * height
@@ -97,6 +98,10 @@ class ViewController: UIViewController {
                                 bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
         let cgImage = image.cgImage
         context?.draw(cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
+        return pixelData
+    }
+    func pixelData( pixelData: Array<UInt8>) -> Array<UInt8>  {
+        
         
         var arrayOfColors = [[UInt8]()]
         var arrayOfColor = [UInt8]()

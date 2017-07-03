@@ -15,16 +15,38 @@ class MakeMosaic{
         open var _barSize = 0
         private var context: CGContext!
     
-        init(viewController: UIViewController, imageView: UIImageView, barSize: Int){
+    init(viewController: UIViewController, imageView: UIImageView, barSize: Int, image: UIImage){
             _viewController = viewController
             _imageView = imageView
             _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: _viewController.view.frame.size.width, height: _viewController.view.frame.size.height))// point borders where posible to drawing
             
             UIGraphicsBeginImageContext(_viewController.view.frame.size) // created grafic context and set size = view.frame
+            context = getContext(image: image)
             context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
             
             _barSize = barSize
         }
+    func getContext(image: UIImage) -> CGContext {
+        let width = image.size.width
+        let height = image.size.height
+        let size = width * height
+        let dataSize = width * height * 4
+        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let context = CGContext(data: &pixelData,
+                                width: Int(width),
+                                height: Int(height),
+                                bitsPerComponent: 8,
+                                bytesPerRow: 4 * Int(width),
+                                space: colorSpace,
+                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
+        let cgImage = image.cgImage
+        context?.draw(cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
+      
+
+            return context!
+    }
+
         func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImageView{
             var x = 0
             var y = 0
