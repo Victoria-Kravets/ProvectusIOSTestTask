@@ -69,13 +69,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     }
 
     func createAlert(title: String, massage: String){
-        let mainVC = MainViewController()
-        let vc = ViewController()
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+
         }))
-        //alert.addAction(OKAction)
+        
         self.present(alert, animated: true, completion: nil)
         
         
