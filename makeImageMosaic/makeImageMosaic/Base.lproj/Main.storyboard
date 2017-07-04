@@ -92,25 +92,32 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="Show example 3" id="w7W-Lq-4GL"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-Cw-T36">
-                                <rect key="frame" x="77" y="510" width="220" height="137"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl5-5K-iFz">
-                                <rect key="frame" x="39" y="469" width="298" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose size of bar:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl5-5K-iFz">
+                                <rect key="frame" x="38" y="436" width="298" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="f1J-2I-98b"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-Cw-T36">
+                                <rect key="frame" x="77" y="468" width="220" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="AlM-u6-3TC"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ddY-Eo-DI6" firstAttribute="top" secondItem="jEE-jd-eaE" secondAttribute="bottom" constant="30" id="0K1-Ky-WnD"/>
                             <constraint firstItem="H0v-Uj-KIE" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="119" id="1g7-sV-Kxx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kl5-5K-iFz" secondAttribute="trailing" constant="23" id="49v-LV-pR9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sI1-d0-J6c" secondAttribute="trailing" constant="122" id="5yr-VL-OCB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dLm-Cw-T36" secondAttribute="trailing" constant="62" id="7k5-Ju-PPr"/>
                             <constraint firstItem="ddY-Eo-DI6" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="10" id="D1U-jP-8yg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ddY-Eo-DI6" secondAttribute="trailing" constant="10" id="Fkr-q9-tyJ"/>
+                            <constraint firstItem="kl5-5K-iFz" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="22" id="KJO-P9-ryY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c9d-IZ-Ubt" secondAttribute="trailing" constant="122" id="KPS-Q9-ySw"/>
                             <constraint firstItem="Meu-Ga-RWT" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="108" id="Kld-Kj-jM5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Meu-Ga-RWT" secondAttribute="trailing" constant="109" id="MsO-HR-soa"/>
@@ -123,10 +130,13 @@
                             <constraint firstItem="c9d-IZ-Ubt" firstAttribute="top" secondItem="2Mz-rs-Yuf" secondAttribute="bottom" constant="42" id="gCz-zc-Nd4"/>
                             <constraint firstItem="2Mz-rs-Yuf" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="10" id="kVT-PT-0y0"/>
                             <constraint firstItem="cBf-k8-ME6" firstAttribute="top" secondItem="c9d-IZ-Ubt" secondAttribute="bottom" constant="8" id="pqt-9x-dHV"/>
+                            <constraint firstItem="dLm-Cw-T36" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="61" id="q66-TF-IJW"/>
                             <constraint firstItem="sI1-d0-J6c" firstAttribute="top" secondItem="cBf-k8-ME6" secondAttribute="bottom" constant="8" id="twr-CI-p1h"/>
                             <constraint firstItem="2Mz-rs-Yuf" firstAttribute="top" secondItem="Meu-Ga-RWT" secondAttribute="bottom" constant="34" id="v75-ba-9Ln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H0v-Uj-KIE" secondAttribute="trailing" constant="119" id="wVA-LB-1Hw"/>
                             <constraint firstItem="Meu-Ga-RWT" firstAttribute="top" secondItem="ddY-Eo-DI6" secondAttribute="bottom" constant="25" id="wok-um-EQW"/>
+                            <constraint firstItem="kl5-5K-iFz" firstAttribute="top" secondItem="sI1-d0-J6c" secondAttribute="bottom" constant="16" id="xtZ-Gw-JTM"/>
+                            <constraint firstItem="dLm-Cw-T36" firstAttribute="top" secondItem="kl5-5K-iFz" secondAttribute="bottom" constant="8" id="ynS-Vw-ZUC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Eq0-tD-8T8"/>
