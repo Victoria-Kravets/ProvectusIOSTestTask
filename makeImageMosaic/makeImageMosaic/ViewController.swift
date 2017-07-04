@@ -51,7 +51,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             }
         }
 
-        downloadedImage.getImage(urlName: url, successHandler, errorHandler)
+        print(url)
+        downloadedImage.getImage(urlName: url1, successHandler, errorHandler)
        // imageView.image = image
         
     }
