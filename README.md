@@ -15,7 +15,7 @@
 **Instructions:**
 - Open `provctusTestTaskByVictoriaKravets.xcworkspace` and run in xcode simulator `makeImageMosaic` project: 
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="">
     <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/2.png">
   </a>
   <p align="center">Initial view</p>
@@ -24,7 +24,7 @@
 - Provide an image url(like this `http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg`) in given textfield and click `Make Mosaic` button, wait till the image get loaded and observe the result. You will have the image recreated with only bars sizeof `20 px`: 
 
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="">
     <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/7.png">
   </a>
   <p align="center">Image recreated with default bars size of 20px</p>
@@ -42,7 +42,7 @@
 - Looks better, right? Let compare it to original one in `*.jpg` format:
 
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="">
     <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/6.png">
   </a>
   <p align="center">Original image http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg</p>
@@ -51,17 +51,26 @@
 - You are able to zoom in and zoom out the image: 
 
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="">
     <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/together.png">
   </a>
-  <p align="center">Zoom in/Zoom out</p>
+  <p align="center">Original image     |     Recreated with 5 px bars     |     Zoomed in </p>
 </p>
 
 - Also be aware to provide a valid url, if not you will get warning message! =) Don't be shy to try a few examples at the main view, they may come very handy if you don't wanna search for image url.
 
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="">
     <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/9.png">
   </a>
   <p align="center">Warning alert in case user provide invalid url</p>
+</p>
+
+- It's also able to cope with photos: 
+
+<p align="center">
+  <a href="">
+    <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/myProfileGitHubPhoto.png">
+  </a>
+  <p align="center">Original photo before / Recreated with bars</p>
 </p>
