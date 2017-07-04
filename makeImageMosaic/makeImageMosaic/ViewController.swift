@@ -22,15 +22,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             scrollView.minimumZoomScale = 0.05
         }
     }
-    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     @IBOutlet weak var imageView: UIImageView!
-
     @IBOutlet weak var activity: UIActivityIndicatorView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         activity.startAnimating()
@@ -51,11 +48,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                             self.activity.stopAnimating()
                         }
                     }
-                    
                 }
-                
             }
-            
         }
         let errorHandler = { (massage: String)-> () in
             if massage == "failure"{
@@ -73,11 +67,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     func backToPreviousVC(){
         self.navigationController?.popViewController(animated: true)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       //fetchImage()
-
-    }
+    
     
     func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
         let size = image.size
@@ -123,11 +113,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
       return arrayOfColors
     }
     
-
-    
     func pixelData( pixelData: Array<UInt8>) -> Array<UInt8>  {
-        
-        
         var arrayOfColors = [[UInt8]()]
         var arrayOfColor = [UInt8]()
         arrayOfColor.removeAll()
@@ -179,11 +165,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             }else{
                 dictionaryOfColor[color] = 1
             }
-            
-            
         }
         var resultColorString = dictionaryOfColor.first
-        
         for element in dictionaryOfColor {
             if element.value > (resultColorString?.value)! {
                 resultColorString = element
@@ -200,8 +183,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 str = ""
             }
         }
-         arrayOfDigitColor.append(UInt8(str)!)
-
+        arrayOfDigitColor.append(UInt8(str)!)
         return arrayOfDigitColor
     }
 

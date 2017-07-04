@@ -19,14 +19,11 @@ class MakeMosaic{
             _viewController = viewController
             _imageView = imageView
             let getContextObj = GetContext()
-        
             UIGraphicsBeginImageContext(image.size) // created grafic context and set size = view.frame
             context = getContextObj.getContext(image: image).0
             context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
             _barSize = barSize
         }
-
-    
     func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImageView{
         var x = 0
         var y = 0

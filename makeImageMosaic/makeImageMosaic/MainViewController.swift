@@ -37,7 +37,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         textField.placeholder = "http://i052.radikal.ru/1207/3a/c8d6e700445f.jpg"
         pickerView.delegate = self
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        textField.text = ""
+    }
+   
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(arrayOfBarSize[row])
     }
@@ -69,46 +72,39 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             if let vc = segue.destination as? ViewController{
                 vc.url = textField.text!
                 vc.barSize = size
-                
             }
         }
         if segue.identifier == "Show mosaic 1" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
                 vc.barSize = size
-                
             }
         }
         if segue.identifier == "Show mosaic 2" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
                vc.barSize = size
-                
             }
         }
         if segue.identifier == "Show mosaic 3" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
                 vc.barSize = size
-                
             }
         }
         if segue.identifier == "Show original image 1" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
-                vc.barSize = 0
             }
         }
         if segue.identifier == "Show original image 2" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
-               vc.barSize = 0
             }
         }
         if segue.identifier == "Show original image 3" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
-               vc.barSize = 0 
             }
         }
     }
