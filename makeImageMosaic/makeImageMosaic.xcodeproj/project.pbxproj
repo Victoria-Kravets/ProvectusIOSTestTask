@@ -40,7 +40,7 @@
 		75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetImageFromInternet.swift; sourceTree = "<group>"; };
 		75220FB11F0AB5B50083F823 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		75220FB61F0AECCC0083F823 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeMosaicTests.swift; sourceTree = "<group>"; };
+		75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeMosaicTests.swift; path = ../makeImageMosaic/MakeMosaicTests.swift; sourceTree = "<group>"; };
 		75E15E021F099E320071DBF1 /* jerry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerry.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +122,6 @@
 				75E3FD671F04E50D00D9879B /* LaunchScreen.storyboard */,
 				75E3FD6A1F04E50D00D9879B /* Info.plist */,
 				75E3FD811F05071A00D9879B /* MakeMosaic.swift */,
-				75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */,
 				75220FAA1F0AB2070083F823 /* GetImageFromInternet.swift */,
 				75220FB61F0AECCC0083F823 /* MainViewController.swift */,
 			);
@@ -132,6 +131,7 @@
 		75E3FD721F04E50D00D9879B /* makeImageMosaicTests */ = {
 			isa = PBXGroup;
 			children = (
+				75663B2F1F080A9700E88540 /* MakeMosaicTests.swift */,
 				75E3FD731F04E50D00D9879B /* makeImageMosaicTests.swift */,
 				75E3FD751F04E50D00D9879B /* Info.plist */,
 			);

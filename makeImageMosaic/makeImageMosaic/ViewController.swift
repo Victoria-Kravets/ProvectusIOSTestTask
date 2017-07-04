@@ -31,14 +31,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         return imageView
     }
     @IBOutlet weak var imageView: UIImageView!
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
 
-    }
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activity.startAnimating()
         scrollView.delegate = self
         scrollView.addSubview(imageView)
         
@@ -50,6 +49,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 let vc = UIViewController()
                 let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.originalImage)
                 let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+                self.activity.stopAnimating()
             }
             
         }
@@ -69,6 +69,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     }
 
     func createAlert(title: String, massage: String){
+//        let mainVC = MainViewController()
+//        let vc = ViewController()
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)

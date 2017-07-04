@@ -154,17 +154,18 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-pe-yWP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moj-FA-VQ7">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moj-FA-VQ7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-uE-V5Q">
                                         <rect key="frame" x="14" y="-38" width="34" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Back"/>
-                                        <connections>
-                                            <action selector="backBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gQj-b2-0io"/>
-                                        </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-kL-6k5">
+                                        <rect key="frame" x="177" y="287" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="7ww-gi-0pf"/>
@@ -172,6 +173,8 @@
                                     <constraint firstItem="moj-FA-VQ7" firstAttribute="leading" secondItem="hhU-pe-yWP" secondAttribute="leading" id="Ac1-L0-qsh"/>
                                     <constraint firstItem="moj-FA-VQ7" firstAttribute="centerY" secondItem="hhU-pe-yWP" secondAttribute="centerY" id="LCe-oL-prj"/>
                                     <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="M9w-rP-IeT"/>
+                                    <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="OBm-8R-E0D"/>
+                                    <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="hgB-YC-a0a"/>
                                     <constraint firstItem="moj-FA-VQ7" firstAttribute="top" secondItem="hhU-pe-yWP" secondAttribute="top" id="mag-68-GjJ"/>
                                 </constraints>
                             </scrollView>
@@ -185,14 +188,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="Rbp-kL-6k5" id="rat-aY-ktg"/>
                         <outlet property="imageView" destination="moj-FA-VQ7" id="IWG-M5-rRC"/>
-                        <outlet property="scrollView" destination="hhU-pe-yWP" id="4Zh-ys-z3b"/>
+                        <outlet property="scrollView" destination="hhU-pe-yWP" id="Osp-ma-Jji"/>
                         <segue destination="oNo-5C-hu6" kind="show" identifier="GoBackToMainVC" id="WnE-ZP-PRq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="123"/>
+            <point key="canvasLocation" x="1040.8" y="122.78860569715144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEh-hc-bhz">
