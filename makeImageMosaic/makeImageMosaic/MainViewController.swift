@@ -32,29 +32,24 @@ class MainViewController: UIViewController {
     func error(errorMessage: String){
     print(errorMessage)
     }
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
     
      //MARK: - Navigation
 
      //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "Show Image" {
             if let vc = segue.destination as? ViewController{
                 vc.url = textField.text!
+                
             }
         }
     
     
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "PokemonDetailVC" {
-//            if let detailVC = segue.destination as? PokemonDetailVC {
-//                if let poke = sender as? Pokimon {
-//                    detailVC.pokemon = poke
-//                }
-//            }
-//        }
-//    }
     
 
 }

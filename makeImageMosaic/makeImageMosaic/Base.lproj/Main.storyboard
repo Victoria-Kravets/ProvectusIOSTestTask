@@ -92,6 +92,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moj-FA-VQ7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-uE-V5Q">
+                                        <rect key="frame" x="14" y="-38" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gQj-b2-0io"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="7ww-gi-0pf"/>

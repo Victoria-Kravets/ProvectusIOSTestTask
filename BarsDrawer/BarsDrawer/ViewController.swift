@@ -28,6 +28,8 @@ class ViewController: UIViewController {
             
             [UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)],
             //
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+    }
             [UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0),UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0), UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0), UIColor.init(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0),UIColor.init(red: 0.0, green: 255.0, blue: 0.0, alpha: 1.0)],
             //
             

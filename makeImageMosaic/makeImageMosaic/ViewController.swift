@@ -9,13 +9,15 @@
 import UIKit
 import BarsDrawer
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDelegate {
     let originalImage = UIImage(named: "jerry.png")!
-    let url1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+    let urlExemple1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+    let urlExemple2 = "http://batona.net/uploads/posts/2016-01/1451909976_639.jpg"
+    let urlExemple3 = "http://shop.camellia.ua/upload/kamelia_flora/photos/be/c3/1200x1200/abf568f3_57ab004613cc5.jpg"
     var url = ""
     let context = GetContext()
     let downloadedImage = GetImageFromInternet()
-    
+    var image = UIImage()
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
             scrollView.contentSize = imageView.frame.size
@@ -27,17 +29,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }
     @IBOutlet weak var imageView: UIImageView!
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
         scrollView.addSubview(imageView)
-        var image = UIImage()
+        
+        //fetchImage()
         let successHandler = { (data: Data)-> () in
             if data != nil{
-                image = UIImage(data: data)!
-                let arrayOfColors = self.getArrayOfColors(image: image)
+                self.image = UIImage(data: data)!
+                let arrayOfColors = self.getArrayOfColors(image: self.image)
                 let vc = UIViewController()
                 let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
                 let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
@@ -52,10 +59,46 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
 
         print(url)
-        downloadedImage.getImage(urlName: url1, successHandler, errorHandler)
-       // imageView.image = image
+        downloadedImage.getImage(urlName: url, successHandler, errorHandler)
+        
         
     }
+//    func fetchImage(){
+//        DispatchQueue.global(qos: .userInitiated).async{
+//            let successHandler = { (data: Data)-> () in
+//                if data != nil{
+//                    self.image = UIImage(data: data)!
+//                    let arrayOfColors = self.getArrayOfColors(image: self.image)
+//                    let vc = UIViewController()
+//                    let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
+//                    let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+//                }
+//                
+//            }
+//            let errorHandler = { (massage: String)-> () in
+//                if massage == "error"{
+//                    let mainVC = MainViewController()
+//                    mainVC.error(errorMessage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+//                    
+//                }
+//            }
+//            
+//            print(self.url)
+//            self.downloadedImage.getImage(urlName: self.url, successHandler, errorHandler)
+//            
+//            DispatchQueue.main.async{
+//                self.navigationItem.title = "Hello"
+//                self.imageView.backgroundColor = UIColor.gray
+//                
+//            }
+//        }
+//    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//       fetchImage()
+//
+//    }
+    
     func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
         var resultArray = [[UInt8]()]
         resultArray.removeAll()
