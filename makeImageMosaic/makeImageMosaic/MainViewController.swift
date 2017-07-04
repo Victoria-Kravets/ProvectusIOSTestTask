@@ -18,6 +18,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         textField.delegate = self
         textField.returnKeyType = UIReturnKeyType.done
         textField.resignFirstResponder()
+        textField.placeholder = "http://i052.radikal.ru/1207/3a/c8d6e700445f.jpg"
         pickerView.delegate = self
     }
 
@@ -55,25 +56,43 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
                 
             }
         }
-        if segue.identifier == "Show example 1" {
+        if segue.identifier == "Show mosaic 1" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
                 vc.barSize = size
                 
             }
         }
-        if segue.identifier == "Show example 2" {
+        if segue.identifier == "Show mosaic 2" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
                vc.barSize = size
                 
             }
         }
-        if segue.identifier == "Show example 3" {
+        if segue.identifier == "Show mosaic 3" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
                 vc.barSize = size
                 
+            }
+        }
+        if segue.identifier == "Show original image 1" {
+            if let vc = segue.destination as? ViewController{
+                vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+                vc.barSize = 0
+            }
+        }
+        if segue.identifier == "Show original image 2" {
+            if let vc = segue.destination as? ViewController{
+                vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
+               vc.barSize = 0
+            }
+        }
+        if segue.identifier == "Show original image 3" {
+            if let vc = segue.destination as? ViewController{
+                vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
+               vc.barSize = 0 
             }
         }
     }

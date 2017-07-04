@@ -36,18 +36,22 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         activity.startAnimating()
         scrollView.delegate = self
         scrollView.addSubview(imageView)
-        
         let successHandler = { (data: Data)-> () in
             if data != nil{
                 DispatchQueue.global(qos: .userInitiated).async{
                     self.image = UIImage(data: data)!
-                    let arrayOfColors = self.getArrayOfColors(image: self.image)
-                    let vc = UIViewController()
-                    DispatchQueue.main.async {
-                        let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
-                        let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
-                        self.activity.stopAnimating()
+                    if self.barSize == 0{
+                        self.imageView.image = self.image
+                    }else{
+                        let arrayOfColors = self.getArrayOfColors(image: self.image)
+                        let vc = UIViewController()
+                        DispatchQueue.main.async {
+                            let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
+                            let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+                            self.activity.stopAnimating()
+                        }
                     }
+                    
                 }
                 
             }
@@ -59,8 +63,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             }
         }
         downloadedImage.getImage(urlName: url, successHandler, errorHandler)
+        
     }
-
     func createAlert(title: String, massage: String){
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in self.navigationController?.popViewController(animated: true) }))
