@@ -37,15 +37,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         scrollView.delegate = self
         scrollView.addSubview(imageView)
         
-        //fetchImage()
         let successHandler = { (data: Data)-> () in
             if data != nil{
-                self.image = UIImage(data: data)!
-                let arrayOfColors = self.getArrayOfColors(image: self.image)
-                let vc = UIViewController()
-                let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
-                let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
-                self.activity.stopAnimating()
+                DispatchQueue.global(qos: .userInitiated).async{
+                    self.image = UIImage(data: data)!
+                    let arrayOfColors = self.getArrayOfColors(image: self.image)
+                    let vc = UIViewController()
+                    DispatchQueue.main.async {
+                        let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
+                        let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+                        self.activity.stopAnimating()
+                    }
+                }
+                
             }
             
         }
@@ -62,36 +66,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in self.navigationController?.popViewController(animated: true) }))
         self.present(alert, animated: true, completion: nil)
     }
-//    func fetchImage(){
-//        DispatchQueue.global(qos: .userInitiated).async{
-//            let successHandler = { (data: Data)-> () in
-//                if data != nil{
-//                    self.image = UIImage(data: data)!
-//                    let arrayOfColors = self.getArrayOfColors(image: self.image)
-//                    let vc = UIViewController()
-//                    let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
-//                    let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
-//                    self.activity.stopAnimating()
-//                    
-//                }
-//                
-//            }
-//            let errorHandler = { (massage: String)-> () in
-//                if massage == "failure"{
-//                    self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
-//                    
-//                }
-//            }
-//            self.downloadedImage.getImage(urlName: self.url, successHandler, errorHandler)
-//
-//            DispatchQueue.main.async{
-//                self.activity.startAnimating()
-//                //self.navigationController?.popViewController(animated: true)
-//                
-//               
-//            }
-//        }
-//    }
     func backToPreviousVC(){
         self.navigationController?.popViewController(animated: true)
     }
