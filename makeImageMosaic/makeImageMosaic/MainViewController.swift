@@ -22,9 +22,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
 
    
-    @IBAction func displayImage(_ sender: UIButton) {
-//??????
-    }
+   
     func error(errorMessage: String){
     print(errorMessage)
     }

@@ -47,7 +47,6 @@
                                 </constraints>
                                 <state key="normal" title="Display image"/>
                                 <connections>
-                                    <action selector="displayImage:" destination="oNo-5C-hu6" eventType="touchUpInside" id="0w2-p5-8zR"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="Show Image" id="T15-9d-Zmh"/>
                                 </connections>
                             </button>
@@ -166,26 +165,21 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moj-FA-VQ7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="vP6-zG-IJf"/>
+                                            <constraint firstAttribute="width" constant="375" id="zUT-ou-QLl"/>
+                                        </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-uE-V5Q">
-                                        <rect key="frame" x="14" y="-38" width="34" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Back"/>
-                                    </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-kL-6k5">
                                         <rect key="frame" x="177" y="287" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="7ww-gi-0pf"/>
-                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="centerX" secondItem="hhU-pe-yWP" secondAttribute="centerX" id="Aby-Ue-yc3"/>
-                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="leading" secondItem="hhU-pe-yWP" secondAttribute="leading" id="Ac1-L0-qsh"/>
-                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="centerY" secondItem="hhU-pe-yWP" secondAttribute="centerY" id="LCe-oL-prj"/>
-                                    <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="M9w-rP-IeT"/>
-                                    <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="OBm-8R-E0D"/>
-                                    <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="hgB-YC-a0a"/>
-                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="top" secondItem="hhU-pe-yWP" secondAttribute="top" id="mag-68-GjJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="moj-FA-VQ7" secondAttribute="bottom" id="AOm-af-Uhv"/>
+                                    <constraint firstAttribute="trailing" secondItem="moj-FA-VQ7" secondAttribute="trailing" id="F02-7e-hbu"/>
+                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="top" secondItem="hhU-pe-yWP" secondAttribute="top" id="LzU-Rg-x2E"/>
+                                    <constraint firstItem="moj-FA-VQ7" firstAttribute="leading" secondItem="hhU-pe-yWP" secondAttribute="leading" id="ZbS-f5-M1q"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -206,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1044" y="122.78860569715144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEh-hc-bhz">

@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         didSet{
             scrollView.contentSize = imageView.frame.size
             scrollView.maximumZoomScale = 2.0
-            scrollView.minimumZoomScale = 0.1
+            scrollView.minimumZoomScale = 0.05
         }
     }
     
@@ -45,9 +45,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         let successHandler = { (data: Data)-> () in
             if data != nil{
                 self.image = UIImage(data: data)!
+                let sizz = self.image.size
+                let sizzze = self.image.size
                 let arrayOfColors = self.getArrayOfColors(image: self.image)
                 let vc = UIViewController()
-                let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.originalImage)
+                let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
                 let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
                 self.activity.stopAnimating()
             }
