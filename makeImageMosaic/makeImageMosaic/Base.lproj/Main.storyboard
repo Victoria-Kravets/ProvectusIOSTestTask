@@ -51,16 +51,69 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="Show Image" id="T15-9d-Zmh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can input URL or choose one of examle URL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mz-rs-Yuf">
+                                <rect key="frame" x="26" y="213" width="323" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="IKh-zH-BZZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9d-IZ-Ubt">
+                                <rect key="frame" x="138" y="301" width="99" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="cLR-NY-4rv"/>
+                                </constraints>
+                                <state key="normal" title="Example 1"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Show example 1" id="AHR-Bh-tOE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-k8-ME6">
+                                <rect key="frame" x="138" y="358" width="99" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="h2g-2M-Naz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="zJx-Bf-bYZ"/>
+                                </constraints>
+                                <state key="normal" title="Example 2"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Show example 2" id="vCf-om-kVe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-d0-J6c">
+                                <rect key="frame" x="138" y="415" width="99" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="TVR-j7-5Fx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="d7u-Ql-f2g"/>
+                                </constraints>
+                                <state key="normal" title="Example 3"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Show example 3" id="w7W-Lq-4GL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ddY-Eo-DI6" firstAttribute="top" secondItem="jEE-jd-eaE" secondAttribute="bottom" constant="30" id="0K1-Ky-WnD"/>
                             <constraint firstItem="H0v-Uj-KIE" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="119" id="1g7-sV-Kxx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sI1-d0-J6c" secondAttribute="trailing" constant="122" id="5yr-VL-OCB"/>
                             <constraint firstItem="ddY-Eo-DI6" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="10" id="D1U-jP-8yg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ddY-Eo-DI6" secondAttribute="trailing" constant="10" id="Fkr-q9-tyJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c9d-IZ-Ubt" secondAttribute="trailing" constant="122" id="KPS-Q9-ySw"/>
                             <constraint firstItem="Meu-Ga-RWT" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="108" id="Kld-Kj-jM5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Meu-Ga-RWT" secondAttribute="trailing" constant="109" id="MsO-HR-soa"/>
                             <constraint firstItem="H0v-Uj-KIE" firstAttribute="top" secondItem="jEE-jd-eaE" secondAttribute="bottom" constant="1" id="UhF-Co-mQv"/>
+                            <constraint firstItem="cBf-k8-ME6" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="122" id="Vrs-65-JmS"/>
+                            <constraint firstItem="sI1-d0-J6c" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="122" id="W1G-O2-TWK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cBf-k8-ME6" secondAttribute="trailing" constant="122" id="Z2H-r7-hri"/>
+                            <constraint firstItem="c9d-IZ-Ubt" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="122" id="bGQ-XM-RDM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Mz-rs-Yuf" secondAttribute="trailing" constant="10" id="bTH-iV-Nha"/>
+                            <constraint firstItem="c9d-IZ-Ubt" firstAttribute="top" secondItem="2Mz-rs-Yuf" secondAttribute="bottom" constant="42" id="gCz-zc-Nd4"/>
+                            <constraint firstItem="2Mz-rs-Yuf" firstAttribute="leading" secondItem="xX2-Og-5pg" secondAttribute="leadingMargin" constant="10" id="kVT-PT-0y0"/>
+                            <constraint firstItem="cBf-k8-ME6" firstAttribute="top" secondItem="c9d-IZ-Ubt" secondAttribute="bottom" constant="8" id="pqt-9x-dHV"/>
+                            <constraint firstItem="sI1-d0-J6c" firstAttribute="top" secondItem="cBf-k8-ME6" secondAttribute="bottom" constant="8" id="twr-CI-p1h"/>
+                            <constraint firstItem="2Mz-rs-Yuf" firstAttribute="top" secondItem="Meu-Ga-RWT" secondAttribute="bottom" constant="34" id="v75-ba-9Ln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H0v-Uj-KIE" secondAttribute="trailing" constant="119" id="wVA-LB-1Hw"/>
                             <constraint firstItem="Meu-Ga-RWT" firstAttribute="top" secondItem="ddY-Eo-DI6" secondAttribute="bottom" constant="25" id="wok-um-EQW"/>
                         </constraints>
@@ -147,4 +200,7 @@
             <point key="canvasLocation" x="-663.20000000000005" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="w7W-Lq-4GL"/>
+    </inferredMetricsTieBreakers>
 </document>

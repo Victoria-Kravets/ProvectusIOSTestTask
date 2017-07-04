@@ -47,6 +47,24 @@ class MainViewController: UIViewController {
                 
             }
         }
+        if segue.identifier == "Show example 1" {
+            if let vc = segue.destination as? ViewController{
+                vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+                
+            }
+        }
+        if segue.identifier == "Show example 2" {
+            if let vc = segue.destination as? ViewController{
+                vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
+                
+            }
+        }
+        if segue.identifier == "Show example 3" {
+            if let vc = segue.destination as? ViewController{
+                vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
+                
+            }
+        }
     
     
     }
