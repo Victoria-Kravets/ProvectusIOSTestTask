@@ -8,20 +8,22 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UIPickerViewDelegate {
+class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
     let arrayOfBarSize = [2, 5, 10, 20]
     var size = 2
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textField.delegate = self
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.resignFirstResponder()
         pickerView.delegate = self
     }
 
    
     @IBAction func displayImage(_ sender: UIButton) {
-
+//??????
     }
     func error(errorMessage: String){
     print(errorMessage)
@@ -52,7 +54,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate {
            size = 2
         }
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Show Image" {
