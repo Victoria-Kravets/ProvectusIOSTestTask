@@ -131,7 +131,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Eq0-tD-8T8"/>
                     <connections>
-                        <outlet property="pickerView" destination="dLm-Cw-T36" id="1PV-tn-ISD"/>
+                        <outlet property="pickerView" destination="dLm-Cw-T36" id="Ydf-4U-Lyk"/>
                         <outlet property="textField" destination="ddY-Eo-DI6" id="TT8-hH-xZd"/>
                     </connections>
                 </viewController>
@@ -213,6 +213,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w7W-Lq-4GL"/>
+        <segue reference="T15-9d-Zmh"/>
     </inferredMetricsTieBreakers>
 </document>

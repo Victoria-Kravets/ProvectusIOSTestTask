@@ -54,14 +54,29 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             
         }
         let errorHandler = { (massage: String)-> () in
-            if massage == "error"{
+            if massage == "failure"{
                 let mainVC = MainViewController()
                 mainVC.error(errorMessage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+                self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+                
             }
         }
 
         print(url)
         downloadedImage.getImage(urlName: url, successHandler, errorHandler)
+        
+        
+    }
+
+    func createAlert(title: String, massage: String){
+        let mainVC = MainViewController()
+        let vc = ViewController()
+        let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        //alert.addAction(OKAction)
+        self.present(alert, animated: true, completion: nil)
         
         
     }
