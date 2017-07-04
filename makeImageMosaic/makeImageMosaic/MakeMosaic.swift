@@ -23,8 +23,6 @@ class MakeMosaic{
             UIGraphicsBeginImageContext(image.size) // created grafic context and set size = view.frame
             context = getContextObj.getContext(image: image).0
             context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
-            _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: 1000, height: 1000))// point borders where posible to drawing
-            
             _barSize = barSize
         }
 
@@ -43,9 +41,7 @@ class MakeMosaic{
                 let blue: CGFloat = CGFloat(Double(barColor[2]) / 255)
                 let alpha: CGFloat = CGFloat(Double(barColor[3]) / 255)
                 context?.setFillColor(UIColor(red: red, green: green, blue: blue, alpha: alpha).cgColor)
-                
                 context.fillPath()
-                
                 x += _barSize
             }
             y += _barSize
@@ -56,9 +52,4 @@ class MakeMosaic{
         return _imageView
     }
     
-    func drawRectFrom(x: Int, y: Int, width: Int, height: Int, color: Array<UInt8>) {
-    
-    }
-
-
 }

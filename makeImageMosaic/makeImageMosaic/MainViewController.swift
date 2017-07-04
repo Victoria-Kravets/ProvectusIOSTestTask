@@ -21,14 +21,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         pickerView.delegate = self
     }
 
-   
-   
-    func error(errorMessage: String){
-    print(errorMessage)
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
-    }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(arrayOfBarSize[row])
     }
@@ -41,13 +33,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             size = 2
         case 5:
               size = 5
-            
         case 10:
               size = 10
-            
         case 20:
               size = 20
-            
         default:
            size = 2
         }
@@ -87,9 +76,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
                 
             }
         }
-    
-    
     }
     
-
 }

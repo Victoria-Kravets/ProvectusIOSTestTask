@@ -10,13 +10,9 @@ import UIKit
 import BarsDrawer
 
 class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDelegate {
-    let originalImage = UIImage(named: "jerry.png")!
-//    let urlExemple1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
-//    let urlExemple2 = "http://batona.net/uploads/posts/2016-01/1451909976_639.jpg"
-//    let urlExemple3 = "http://shop.camellia.ua/upload/kamelia_flora/photos/be/c3/1200x1200/abf568f3_57ab004613cc5.jpg"
     var url = ""
     let context = GetContext()
-    let downloadedImage = GetImageFromInternet()
+    let downloadedImage = GetImageDataFromInternet()
     var image = UIImage()
     var barSize = 0
     @IBOutlet weak var scrollView: UIScrollView!{
@@ -45,8 +41,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         let successHandler = { (data: Data)-> () in
             if data != nil{
                 self.image = UIImage(data: data)!
-                let sizz = self.image.size
-                let sizzze = self.image.size
                 let arrayOfColors = self.getArrayOfColors(image: self.image)
                 let vc = UIViewController()
                 let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
@@ -57,31 +51,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         }
         let errorHandler = { (massage: String)-> () in
             if massage == "failure"{
-                let mainVC = MainViewController()
-                mainVC.error(errorMessage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
                 self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
-                
             }
         }
-
-        print(url)
         downloadedImage.getImage(urlName: url, successHandler, errorHandler)
-        
-        
     }
 
     func createAlert(title: String, massage: String){
-//        let mainVC = MainViewController()
-//        let vc = ViewController()
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
-            self.navigationController?.popViewController(animated: true)
-
-        }))
-        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in self.navigationController?.popViewController(animated: true) }))
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
 //    func fetchImage(){
 //        DispatchQueue.global(qos: .userInitiated).async{
@@ -90,47 +69,38 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
 //                    self.image = UIImage(data: data)!
 //                    let arrayOfColors = self.getArrayOfColors(image: self.image)
 //                    let vc = UIViewController()
-//                    let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
+//                    let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
 //                    let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+//                    self.activity.stopAnimating()
+//                    
 //                }
 //                
 //            }
 //            let errorHandler = { (massage: String)-> () in
-//                if massage == "error"{
-//                    let mainVC = MainViewController()
-//                    mainVC.error(errorMessage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+//                if massage == "failure"{
+//                    self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
 //                    
 //                }
 //            }
-//            
-//            print(self.url)
 //            self.downloadedImage.getImage(urlName: self.url, successHandler, errorHandler)
-//            
+//
 //            DispatchQueue.main.async{
-//                self.navigationItem.title = "Hello"
-//                self.imageView.backgroundColor = UIColor.gray
+//                self.activity.startAnimating()
+//                //self.navigationController?.popViewController(animated: true)
 //                
+//               
 //            }
 //        }
 //    }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//       fetchImage()
-//
-//    }
-    
-    func getMostCommonColorAmongBars(arrayOfColors:  Array<Array<Array<UInt8>>>)-> Array<UInt8>{
-        var resultArray = [[UInt8]()]
-        resultArray.removeAll()
-        for color in arrayOfColors {
-            for element in color{
-                resultArray.append(element)
-            }
-            
-        }
-        let mostCommonColor = findPrevailColor(arrayOfColors: resultArray)
-        return mostCommonColor
+    func backToPreviousVC(){
+        self.navigationController?.popViewController(animated: true)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       //fetchImage()
+
+    }
+    
     func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
         let size = image.size
         var height = size.height
@@ -215,7 +185,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             arrayOfStringColor.append(colorStrValue)
             colorStrValue = ""
         }
-        
         
         for color in arrayOfStringColor {
             if !dictionaryOfColor.isEmpty{
