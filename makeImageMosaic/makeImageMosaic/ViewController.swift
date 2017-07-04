@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
             scrollView.contentSize = imageView.frame.size
-            scrollView.maximumZoomScale = 2.0
+            scrollView.maximumZoomScale = 4.0
             scrollView.minimumZoomScale = 0.05
         }
     }
