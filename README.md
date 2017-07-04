@@ -48,6 +48,15 @@
   <p align="center">Original image http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg</p>
 </p>
 
+- You are able to zoom in and zoom out the image: 
+
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img src="https://github.com/Victoria-Kravets/ProvectusIOSTestTask/blob/master/screenshots/together.png">
+  </a>
+  <p align="center">Zoom in/Zoom out</p>
+</p>
+
 - Also be aware to provide a valid url, if not you will get warning message! =) Don't be shy to try a few examples at the main view, they may come very handy if you don't wanna search for image url.
 
 <p align="center">
