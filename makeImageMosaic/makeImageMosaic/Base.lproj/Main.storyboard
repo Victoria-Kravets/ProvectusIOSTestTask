@@ -92,6 +92,17 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="Show example 3" id="w7W-Lq-4GL"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-Cw-T36">
+                                <rect key="frame" x="77" y="510" width="220" height="137"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose bar size:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl5-5K-iFz">
+                                <rect key="frame" x="39" y="469" width="298" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -120,6 +131,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Eq0-tD-8T8"/>
                     <connections>
+                        <outlet property="pickerView" destination="dLm-Cw-T36" id="1PV-tn-ISD"/>
                         <outlet property="textField" destination="ddY-Eo-DI6" id="TT8-hH-xZd"/>
                     </connections>
                 </viewController>

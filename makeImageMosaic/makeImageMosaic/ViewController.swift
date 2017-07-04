@@ -11,13 +11,14 @@ import BarsDrawer
 
 class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDelegate {
     let originalImage = UIImage(named: "jerry.png")!
-    let urlExemple1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
-    let urlExemple2 = "http://batona.net/uploads/posts/2016-01/1451909976_639.jpg"
-    let urlExemple3 = "http://shop.camellia.ua/upload/kamelia_flora/photos/be/c3/1200x1200/abf568f3_57ab004613cc5.jpg"
+//    let urlExemple1 = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+//    let urlExemple2 = "http://batona.net/uploads/posts/2016-01/1451909976_639.jpg"
+//    let urlExemple3 = "http://shop.camellia.ua/upload/kamelia_flora/photos/be/c3/1200x1200/abf568f3_57ab004613cc5.jpg"
     var url = ""
     let context = GetContext()
     let downloadedImage = GetImageFromInternet()
     var image = UIImage()
+    var barSize = 0
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
             scrollView.contentSize = imageView.frame.size
@@ -25,6 +26,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             scrollView.minimumZoomScale = 0.1
         }
     }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
@@ -46,7 +48,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 self.image = UIImage(data: data)!
                 let arrayOfColors = self.getArrayOfColors(image: self.image)
                 let vc = UIViewController()
-                let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: 10, image: self.originalImage)
+                let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.originalImage)
                 let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
             }
             
@@ -115,7 +117,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         let size = image.size
         var height = size.height
         var width = size.width
-        var sizePath: CGFloat = 10
+        var sizePath: CGFloat = CGFloat(barSize)
         var x: CGFloat = 0
         var y: CGFloat = 0
         var arrayOfOneColor = [[UInt8]()]
@@ -129,8 +131,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage!))
                 let colorData = pixelData(pixelData: contextOfOneBar.1 as! Array<UInt8>)
                 arrayOfOneColor.append(colorData)
-                sizePath = 10
-                if width >= 10 {
+                sizePath = CGFloat(barSize)
+                if width >= CGFloat(barSize) {
                     width -= sizePath
                 }else{
                     sizePath = width
@@ -140,8 +142,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             }
             arrayOfColors.append(arrayOfOneColor)
             arrayOfOneColor.removeAll()
-            sizePath = 10
-            if height >= 10 {
+            sizePath = CGFloat(barSize)
+            if height >= CGFloat(barSize) {
                 height -= sizePath
             }else{
                 sizePath = height

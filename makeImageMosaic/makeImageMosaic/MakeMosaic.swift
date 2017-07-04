@@ -23,7 +23,7 @@ class MakeMosaic{
             UIGraphicsBeginImageContext(_viewController.view.frame.size) // created grafic context and set size = view.frame
             context = getContextObj.getContext(image: image).0
             context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
-            _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: _viewController.view.frame.size.width, height: _viewController.view.frame.size.height))// point borders where posible to drawing
+            _imageView.image?.draw(in: CGRect(x: 0, y: 0, width: 1000, height: 1000))// point borders where posible to drawing
             
             _barSize = barSize
         }
