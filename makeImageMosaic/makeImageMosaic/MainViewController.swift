@@ -13,8 +13,24 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     var size = 2
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var makeMosaicBtn: UIButton!
+    @IBOutlet weak var mosaic1Btn: UIButton!
+    @IBOutlet weak var mosaic2Btn: UIButton!
+    @IBOutlet weak var mosaic3Btn: UIButton!
+    @IBOutlet weak var originalImg1Btn: UIButton!
+    @IBOutlet weak var originalImg2Btn: UIButton!
+    @IBOutlet weak var originalImg3Btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let borderedBtn = BorderedButton()
+        borderedBtn.getBorderFoButton(button: makeMosaicBtn)
+        borderedBtn.getBorderFoButton(button: mosaic1Btn)
+        borderedBtn.getBorderFoButton(button: mosaic2Btn)
+        borderedBtn.getBorderFoButton(button: mosaic3Btn)
+        borderedBtn.getBorderFoButton(button: originalImg1Btn)
+        borderedBtn.getBorderFoButton(button: originalImg2Btn)
+        borderedBtn.getBorderFoButton(button: originalImg3Btn)
         textField.delegate = self
         textField.returnKeyType = UIReturnKeyType.done
         textField.resignFirstResponder()
