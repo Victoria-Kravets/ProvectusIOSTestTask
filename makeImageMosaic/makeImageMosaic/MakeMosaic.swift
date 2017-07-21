@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class MakeMosaic{
-        open let _viewController: UIViewController
-        open let _imageView: UIImageView
-        open var _barSize = 0
+        let _viewController: UIViewController
+        let _imageView: UIImageView
+        var _barSize = 0
         private var context: CGContext!
     
     init(viewController: UIViewController, imageView: UIImageView, barSize: Int, image: UIImage){

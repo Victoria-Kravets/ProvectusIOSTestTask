@@ -35,20 +35,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         scrollView.addSubview(imageView)
         let successHandler = { (data: Data)-> () in
             if data != nil{
-                DispatchQueue.global(qos: .userInitiated).async{
                     self.image = UIImage(data: data)!
                     if self.barSize == 0{
                         self.imageView.image = self.image
                     }else{
                         let arrayOfColors = self.getArrayOfColors(image: self.image)
                         let vc = UIViewController()
-                        DispatchQueue.main.async {
                             let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
                             let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
                             self.activity.stopAnimating()
-                        }
                     }
-                }
             }
         }
         let errorHandler = { (massage: String)-> () in
