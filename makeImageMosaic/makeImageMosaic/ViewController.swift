@@ -40,10 +40,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                         self.imageView.image = self.image
                     }else{
                         let arrayOfColors = self.getArrayOfColors(image: self.image)
-                        let vc = UIViewController()
+                        DispatchQueue.main.async {
+                            let vc = UIViewController()
                             let makeMosaica = MakeMosaic(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
                             let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
                             self.activity.stopAnimating()
+
+                        }
                     }
             }
         }
