@@ -11,17 +11,17 @@ import  Alamofire
 import  UIKit
 class GetImageDataFromInternet{
     let utilityQueue = DispatchQueue.global(qos: .utility)
-    func getImage(urlName: String, _ completed: @escaping (_ data: Data)->(), _ error: @escaping (_ massage: String)->()){
+    func getImage(urlName: String, onComplete: @escaping (_ data: Data)->(), onError: @escaping (_ massage: String)->()){
         Alamofire.request(urlName)
             .responseData { response in
                 switch response.result {
                 case .success:
                     if let data = response.result.value {
-                        completed(data)
+                        onComplete(data)
                     }
                 case .failure:
                     let massage = "failure"
-                    error(massage)
+                    onError(massage)
                 }
             }
         

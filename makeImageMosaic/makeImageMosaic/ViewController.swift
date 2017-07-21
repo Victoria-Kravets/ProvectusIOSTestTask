@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
             }
         }
-        downloadedImage.getImage(urlName: url, successHandler, errorHandler)
+        downloadedImage.getImage(urlName: url, onComplete: successHandler, onError: errorHandler)
         
     }
     func createAlert(title: String, massage: String){
