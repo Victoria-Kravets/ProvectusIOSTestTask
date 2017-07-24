@@ -37,19 +37,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         scrollView.addSubview(imageView)
         let successHandler = { (data: Data)-> () in
             if data != nil{
-                    self.image = UIImage(data: data)!
-                    if self.barSize == 0{
-                        self.imageView.image = self.image
-                    }else{
-                        let arrayOfColors = self.getArrayOfColors(image: self.image)
-                        DispatchQueue.main.async {
-                            let vc = UIViewController()
-                            let makeMosaica = MosaicMaker(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
-                            let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
-                            self.activity.stopAnimating()
-
-                        }
+                self.image = UIImage(data: data)!
+                if self.barSize == 0{
+                    self.imageView.image = self.image
+                }else{
+                    let arrayOfColors = self.getArrayOfColors(image: self.image)
+                    DispatchQueue.main.async {
+                        let vc = UIViewController()
+                        let makeMosaica = MosaicMaker(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
+                        let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+                        self.activity.stopAnimating()
+                        
                     }
+                }
             }
         }
         let errorHandler = { (massage: String)-> () in
@@ -65,10 +65,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in self.navigationController?.popViewController(animated: true) }))
         self.present(alert, animated: true, completion: nil)
     }
-    func backToPreviousVC(){
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     
     func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
         let size = image.size
@@ -77,10 +73,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         var sizePath: CGFloat = CGFloat(barSize)
         var x: CGFloat = 0
         var y: CGFloat = 0
-        var arrayOfOneColor = [[UInt8]()]
-        var arrayOfColors = [[[UInt8]()]]
-        arrayOfColors.removeAll()
-        arrayOfOneColor.removeAll()
+        var arrayOfOneColor = [[UInt8]]()
+        var arrayOfColors = [[[UInt8]]]()
         while height > 0 {
             while width > 0 {
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
@@ -115,10 +109,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     }
     
     func pixelData( pixelData: Array<UInt8>) -> Array<UInt8>  {
-        var arrayOfColors = [[UInt8]()]
+        var arrayOfColors = [[UInt8]]()
         var arrayOfColor = [UInt8]()
-        arrayOfColor.removeAll()
-        arrayOfColors.removeAll()
         for item in pixelData {
             if arrayOfColors.isEmpty && arrayOfColor.isEmpty{
                 arrayOfColor.append(UInt8(item))

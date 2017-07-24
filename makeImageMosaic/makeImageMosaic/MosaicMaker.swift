@@ -28,8 +28,6 @@ class MosaicMaker{
     func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImageView{
         var x = 0
         var y = 0
-        var arrayColorOfDigit = [UInt8]()
-        arrayColorOfDigit.removeAll()
         for row in colorsRows {
             for barColor in row {
                 let rect = CGRect(x: x, y: y, width: _barSize, height: _barSize) //rect
