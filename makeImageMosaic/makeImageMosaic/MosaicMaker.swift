@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MakeMosaic{
+class MosaicMaker{
     let _viewController: UIViewController
     let _imageView: UIImageView
     var _barSize = 0
