@@ -84,7 +84,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
                 let cropImage: CGImage? = image.cgImage?.cropping(to: rect)
                 let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage!))
-                let colorData = pixelData(pixelData: contextOfOneBar.1 as! Array<UInt8>)
+                let colorData = transformPixelDataToColors(pixelData: contextOfOneBar.1 as! Array<UInt8>)
                 arrayOfOneColor.append(colorData)
                 sizePath = CGFloat(barSize)
                 if width >= CGFloat(barSize) {
@@ -112,7 +112,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
       return arrayOfColors
     }
     
-    func pixelData( pixelData: Array<UInt8>) -> Array<UInt8>  {
+    func transformPixelDataToColors( pixelData: Array<UInt8>) -> Array<UInt8>  {
         var arrayOfColors = [[UInt8]]()
         var arrayOfColor = [UInt8]()
         for item in pixelData {

@@ -10,7 +10,15 @@ import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
     let arrayOfBarSize = [2, 5, 10, 20]
-    var size = 2
+    var _size: Int = 2
+    var size: Int {
+        get{
+            return self._size
+        }
+        set(newValue){
+            self._size = newValue
+        }
+    }
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var makeMosaicBtn: UIButton!
@@ -44,7 +52,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         super.viewDidAppear(true)
         textField.text = ""
     }
-   
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -69,10 +77,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             size = 2
         }
     }
-
+    
 }
 extension MainViewController{
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Show Image" {
             if let vc = segue.destination as? ViewController{
