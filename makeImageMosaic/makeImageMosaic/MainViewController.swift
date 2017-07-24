@@ -53,6 +53,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         textField.text = ""
     }
     
+}
+extension MainViewController{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -77,9 +79,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             size = 2
         }
     }
-    
-}
-extension MainViewController{
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Show Image" {
