@@ -8,7 +8,7 @@
 
 import Foundation
 import  UIKit
-class GetContext{
+class Context{
     
     func getContext(image: UIImage) -> (CGContext, Array<UInt8> ){
         let width = image.size.width

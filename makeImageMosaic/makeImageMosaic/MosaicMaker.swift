@@ -19,7 +19,7 @@ class MosaicMaker{
         _viewController = viewController
         _imageView = imageView
         _barSize = barSize
-        let getContextObj = GetContext()
+        let getContextObj = Context()
         UIGraphicsBeginImageContext(image.size) // created grafic context and set size = view.frame
         context = getContextObj.getContext(image: image).0
         context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context

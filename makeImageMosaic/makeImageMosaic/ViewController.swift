@@ -11,8 +11,8 @@ import BarsDrawer
 
 class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDelegate {
     var url = ""
-    let context = GetContext()
-    let downloadedImage = GetImageDataFromInternet()
+    let context = Context()
+    let downloadedImage = ImageDataFromInternet()
     var image = UIImage()
     var barSize = 0
     @IBOutlet weak var scrollView: UIScrollView!{

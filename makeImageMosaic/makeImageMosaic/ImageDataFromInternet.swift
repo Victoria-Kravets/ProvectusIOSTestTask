@@ -9,7 +9,7 @@
 import Foundation
 import  Alamofire
 import  UIKit
-class GetImageDataFromInternet{
+class ImageDataFromInternet{
     func getImage(urlName: String, onComplete: @escaping (_ data: Data)->(), onError: @escaping (_ massage: String)->()){
         Alamofire.request(urlName)
             .responseData(queue: DispatchQueue.global(qos: .utility), completionHandler: { response in
