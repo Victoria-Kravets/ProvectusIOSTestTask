@@ -23,6 +23,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.resignFirstResponder()
+        textField.placeholder = "http://i052.radikal.ru/1207/3a/c8d6e700445f.jpg"
+        pickerView.delegate = self
         let borderedBtn = BorderedButton()
         borderedBtn.getBorderFoButton(button: makeMosaicBtn)
         borderedBtn.getBorderFoButton(button: mosaic1Btn)
@@ -31,16 +36,22 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         borderedBtn.getBorderFoButton(button: originalImg1Btn)
         borderedBtn.getBorderFoButton(button: originalImg2Btn)
         borderedBtn.getBorderFoButton(button: originalImg3Btn)
-        textField.delegate = self
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.resignFirstResponder()
-        textField.placeholder = "http://i052.radikal.ru/1207/3a/c8d6e700445f.jpg"
-        pickerView.delegate = self
+        
     }
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         textField.text = ""
     }
    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+
+    
+    
+}
+extension MainViewController{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(arrayOfBarSize[row])
     }
@@ -52,20 +63,15 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         case 2:
             size = 2
         case 5:
-              size = 5
+            size = 5
         case 10:
-              size = 10
+            size = 10
         case 20:
-              size = 20
+            size = 20
         default:
-           size = 2
+            size = 2
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Show Image" {
@@ -83,7 +89,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         if segue.identifier == "Show mosaic 2" {
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
-               vc.barSize = size
+                vc.barSize = size
             }
         }
         if segue.identifier == "Show mosaic 3" {
@@ -108,5 +114,4 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             }
         }
     }
-    
 }
