@@ -23,6 +23,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         textField.delegate = self
         textField.returnKeyType = UIReturnKeyType.done
         textField.resignFirstResponder()
@@ -36,7 +39,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         borderedBtn.getBorderFoButton(button: originalImg1Btn)
         borderedBtn.getBorderFoButton(button: originalImg2Btn)
         borderedBtn.getBorderFoButton(button: originalImg3Btn)
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -48,8 +50,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         return false
     }
 
-    
-    
 }
 extension MainViewController{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

@@ -10,20 +10,21 @@ import Foundation
 import UIKit
 
 class MakeMosaic{
-        let _viewController: UIViewController
-        let _imageView: UIImageView
-        var _barSize = 0
-        private var context: CGContext!
+    let _viewController: UIViewController
+    let _imageView: UIImageView
+    var _barSize = 0
+    private var context: CGContext!
     
     init(viewController: UIViewController, imageView: UIImageView, barSize: Int, image: UIImage){
-            _viewController = viewController
-            _imageView = imageView
-            let getContextObj = GetContext()
-            UIGraphicsBeginImageContext(image.size) // created grafic context and set size = view.frame
-            context = getContextObj.getContext(image: image).0
-            context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
-            _barSize = barSize
-        }
+        _viewController = viewController
+        _imageView = imageView
+        _barSize = barSize
+        let getContextObj = GetContext()
+        UIGraphicsBeginImageContext(image.size) // created grafic context and set size = view.frame
+        context = getContextObj.getContext(image: image).0
+        context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
+        
+    }
     func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImageView{
         var x = 0
         var y = 0

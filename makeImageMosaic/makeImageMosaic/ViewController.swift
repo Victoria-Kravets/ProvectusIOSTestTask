@@ -27,11 +27,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     }
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         activity.startAnimating()
         scrollView.delegate = self
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         scrollView.addSubview(imageView)
         let successHandler = { (data: Data)-> () in
             if data != nil{
