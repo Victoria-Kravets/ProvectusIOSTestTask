@@ -52,9 +52,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 }
             }
         }
+        
         let errorHandler = { (massage: String)-> () in
             if massage == "failure"{
-                self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+                DispatchQueue.main.async {
+                    self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+                    print(Thread.isMainThread)
+                }
             }
         }
         downloadedImage.getImage(urlName: url, onComplete: successHandler, onError: errorHandler)
