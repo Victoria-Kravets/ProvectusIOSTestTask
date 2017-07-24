@@ -49,9 +49,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         self.view.endEditing(true)
         return false
     }
-
-}
-extension MainViewController{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(arrayOfBarSize[row])
     }
@@ -72,7 +69,10 @@ extension MainViewController{
             size = 2
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+}
+extension MainViewController{
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Show Image" {
             if let vc = segue.destination as? ViewController{
@@ -84,6 +84,7 @@ extension MainViewController{
             if let vc = segue.destination as? ViewController{
                 vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
                 vc.barSize = size
+                print(size)
             }
         }
         if segue.identifier == "Show mosaic 2" {
