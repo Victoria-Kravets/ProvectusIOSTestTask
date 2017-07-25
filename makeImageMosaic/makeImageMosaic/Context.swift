@@ -22,10 +22,10 @@ class Context{
                                 bitsPerComponent: 8,
                                 bytesPerRow: 4 * Int(width),
                                 space: colorSpace,
-                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
-        let cgImage = image.cgImage
-        context?.draw(cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
-        return (context!, pixelData)
+                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
+        let cgImage = image.cgImage!
+        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+        return (context, pixelData)
     }
 
 }

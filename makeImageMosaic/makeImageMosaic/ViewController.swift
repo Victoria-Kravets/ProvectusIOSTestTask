@@ -82,8 +82,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         while height > 0 {
             while width > 0 {
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
-                let cropImage: CGImage? = image.cgImage?.cropping(to: rect)
-                let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage!))
+                let cropImage: CGImage = image.cgImage!.cropping(to: rect)!
+                let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage))
                 let colorData = transformPixelDataToColors(pixelData: contextOfOneBar.1 as! Array<UInt8>)
                 arrayOfOneColor.append(colorData)
                 sizePath = CGFloat(barSize)
@@ -94,6 +94,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                     width -= width
                 }
                 x += sizePath
+                
+                
             }
             arrayOfColors.append(arrayOfOneColor)
             arrayOfOneColor.removeAll()
@@ -109,7 +111,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             width = size.width
         }
         
-      return arrayOfColors
+        return arrayOfColors
     }
     
     func transformPixelDataToColors( pixelData: Array<UInt8>) -> Array<UInt8>  {
@@ -126,7 +128,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                     arrayOfColor.append(UInt8(item))
                 }
                 else{
-                   arrayOfColor.append(UInt8(item))
+                    arrayOfColor.append(UInt8(item))
                 }
             }
         }
@@ -174,7 +176,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         var str = ""
         for char in resultStr.characters {
             if char != "+"{
-            str.append(String(char))
+                str.append(String(char))
             }else{
                 arrayOfDigitColor.append(UInt8(str)!)
                 str = ""
@@ -183,5 +185,5 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         arrayOfDigitColor.append(UInt8(str)!)
         return arrayOfDigitColor
     }
-
+    
 }
