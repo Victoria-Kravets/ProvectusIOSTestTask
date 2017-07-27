@@ -9,7 +9,7 @@
 import UIKit
 
 class BorderedButton: UIButton {
-
+    
     func getBorderFoButton(button: UIButton){
         button.clipsToBounds = true
         button.layer.borderWidth = 1.0

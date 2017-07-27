@@ -79,7 +79,7 @@ extension MainViewController{
             size = 2
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Show Image" {
