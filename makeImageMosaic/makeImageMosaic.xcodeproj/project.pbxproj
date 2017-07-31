@@ -12,7 +12,6 @@
 		75220FAB1F0AB2070083F823 /* ImageDataFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */; };
 		75220FB21F0AB5B50083F823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75220FB11F0AB5B50083F823 /* Alamofire.framework */; };
 		75220FB71F0AECCC0083F823 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FB61F0AECCC0083F823 /* MainViewController.swift */; };
-		75B1E8901F2CC189003F5B41 /* myView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1E88F1F2CC189003F5B41 /* myView.swift */; };
 		75C7B90A1F0C15950089D979 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C7B9091F0C15950089D979 /* BorderedButton.swift */; };
 		75E15E031F099E320071DBF1 /* jerry.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E15E021F099E320071DBF1 /* jerry.png */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
@@ -41,7 +40,6 @@
 		75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataFromInternet.swift; sourceTree = "<group>"; };
 		75220FB11F0AB5B50083F823 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		75220FB61F0AECCC0083F823 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		75B1E88F1F2CC189003F5B41 /* myView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myView.swift; sourceTree = "<group>"; };
 		75C7B9091F0C15950089D979 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		75E15E021F099E320071DBF1 /* jerry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerry.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +125,6 @@
 				75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */,
 				75220FB61F0AECCC0083F823 /* MainViewController.swift */,
 				75C7B9091F0C15950089D979 /* BorderedButton.swift */,
-				75B1E88F1F2CC189003F5B41 /* myView.swift */,
 			);
 			path = makeImageMosaic;
 			sourceTree = "<group>";
@@ -280,7 +277,6 @@
 				75220FAB1F0AB2070083F823 /* ImageDataFromInternet.swift in Sources */,
 				75220FA11F0A897D0083F823 /* Context.swift in Sources */,
 				75E3FD611F04E50D00D9879B /* ViewController.swift in Sources */,
-				75B1E8901F2CC189003F5B41 /* myView.swift in Sources */,
 				75220FB71F0AECCC0083F823 /* MainViewController.swift in Sources */,
 				75E3FD821F05071A00D9879B /* MosaicMaker.swift in Sources */,
 				75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */,

@@ -46,8 +46,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                         self.imageView.image = drawBar
                         self.activity.stopAnimating()
                         self.view.setNeedsDisplay()
-                        
-                        
                     }
                 }
             }
