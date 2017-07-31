@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import BarsDrawer
-
 class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDelegate {
     var url = ""
     let context = Context()
@@ -43,10 +41,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 }else{
                     let arrayOfColors = self.getArrayOfColors(image: self.image)
                     DispatchQueue.main.async {
-                        let vc = UIViewController()
-                        let makeMosaica = MosaicMaker(viewController: vc, imageView: self.imageView, barSize: self.barSize, image: self.image)
+                        let makeMosaica = MosaicMaker(barSize: self.barSize, image: self.image)
                         let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+                        self.imageView.image = drawBar
                         self.activity.stopAnimating()
+                        self.view.setNeedsDisplay()
+                        
                         
                     }
                 }

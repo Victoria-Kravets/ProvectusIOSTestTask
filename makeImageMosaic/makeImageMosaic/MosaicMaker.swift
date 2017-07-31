@@ -10,14 +10,10 @@ import Foundation
 import UIKit
 
 class MosaicMaker{
-    let _viewController: UIViewController
-    let _imageView: UIImageView
     var _barSize = 0
     private var context: CGContext!
     
-    init(viewController: UIViewController, imageView: UIImageView, barSize: Int, image: UIImage){
-        _viewController = viewController
-        _imageView = imageView
+    init(barSize: Int, image: UIImage){
         _barSize = barSize
         let getContextObj = Context()
         UIGraphicsBeginImageContext(image.size) // created grafic context and set size = view.frame
@@ -25,7 +21,7 @@ class MosaicMaker{
         context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
         
     }
-    func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImageView{
+    func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImage{
         var x = 0
         var y = 0
         for row in colorsRows {
@@ -43,9 +39,9 @@ class MosaicMaker{
             y += _barSize
             x = 0
         }
-        _imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        return _imageView
+        return image
     }
     
 }
