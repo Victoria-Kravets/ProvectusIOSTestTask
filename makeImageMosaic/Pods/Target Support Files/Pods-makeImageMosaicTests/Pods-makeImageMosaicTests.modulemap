@@ -1,0 +1,6 @@
+framework module Pods_makeImageMosaicTests {
+  umbrella header "Pods-makeImageMosaicTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

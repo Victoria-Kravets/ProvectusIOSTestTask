@@ -23,6 +23,9 @@
 		75E3FD741F04E50D00D9879B /* makeImageMosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD731F04E50D00D9879B /* makeImageMosaicTests.swift */; };
 		75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 75E3FD7F1F04E54400D9879B /* mickey_shy.gif */; };
 		75E3FD821F05071A00D9879B /* MosaicMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD811F05071A00D9879B /* MosaicMaker.swift */; };
+		75FF1C391F30A5700003E180 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 75FF1C381F30A5700003E180 /* .swiftlint.yml */; };
+		8CAFBAC773120BDA9CC7518C /* Pods_makeImageMosaicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A1B8256F86F12794A20685 /* Pods_makeImageMosaicTests.framework */; };
+		A56E7126B67C2AFFBCF40B2B /* Pods_makeImageMosaic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596B01F6EB5A8DFD080C753 /* Pods_makeImageMosaic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49A1B8256F86F12794A20685 /* Pods_makeImageMosaicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_makeImageMosaicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56818AFEECA1B90009AD6940 /* Pods-makeImageMosaic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-makeImageMosaic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-makeImageMosaic/Pods-makeImageMosaic.debug.xcconfig"; sourceTree = "<group>"; };
 		75220F9B1F0A6C5D0083F823 /* Tom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tom.png; sourceTree = "<group>"; };
 		75220FA01F0A897D0083F823 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataFromInternet.swift; sourceTree = "<group>"; };
@@ -56,6 +61,11 @@
 		75E3FD751F04E50D00D9879B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75E3FD7F1F04E54400D9879B /* mickey_shy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mickey_shy.gif; sourceTree = "<group>"; };
 		75E3FD811F05071A00D9879B /* MosaicMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MosaicMaker.swift; sourceTree = "<group>"; };
+		75FF1C381F30A5700003E180 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		7FDA4043C08C9748601B835D /* Pods-makeImageMosaicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-makeImageMosaicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-makeImageMosaicTests/Pods-makeImageMosaicTests.release.xcconfig"; sourceTree = "<group>"; };
+		D596B01F6EB5A8DFD080C753 /* Pods_makeImageMosaic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_makeImageMosaic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E098AAC963C17DD531FB03C7 /* Pods-makeImageMosaicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-makeImageMosaicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-makeImageMosaicTests/Pods-makeImageMosaicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F68E40A8967A0B783D26D2DE /* Pods-makeImageMosaic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-makeImageMosaic.release.xcconfig"; path = "Pods/Target Support Files/Pods-makeImageMosaic/Pods-makeImageMosaic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75220FB21F0AB5B50083F823 /* Alamofire.framework in Frameworks */,
+				A56E7126B67C2AFFBCF40B2B /* Pods_makeImageMosaic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,12 +82,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAFBAC773120BDA9CC7518C /* Pods_makeImageMosaicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E1048112B60647844F73DBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56818AFEECA1B90009AD6940 /* Pods-makeImageMosaic.debug.xcconfig */,
+				F68E40A8967A0B783D26D2DE /* Pods-makeImageMosaic.release.xcconfig */,
+				E098AAC963C17DD531FB03C7 /* Pods-makeImageMosaicTests.debug.xcconfig */,
+				7FDA4043C08C9748601B835D /* Pods-makeImageMosaicTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		75220F9F1F0A89610083F823 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				75220FB11F0AB5B50083F823 /* Alamofire.framework */,
+				D596B01F6EB5A8DFD080C753 /* Pods_makeImageMosaic.framework */,
+				49A1B8256F86F12794A20685 /* Pods_makeImageMosaicTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,10 +121,12 @@
 		75E3FD521F04E50D00D9879B = {
 			isa = PBXGroup;
 			children = (
+				75FF1C381F30A5700003E180 /* .swiftlint.yml */,
 				75E3FD5D1F04E50D00D9879B /* makeImageMosaic */,
 				75E3FD721F04E50D00D9879B /* makeImageMosaicTests */,
 				75E3FD5C1F04E50D00D9879B /* Products */,
 				75220FB01F0AB5B50083F823 /* Frameworks */,
+				3E1048112B60647844F73DBB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +142,7 @@
 		75E3FD5D1F04E50D00D9879B /* makeImageMosaic */ = {
 			isa = PBXGroup;
 			children = (
+				75FF1C3C1F30A77B0003E180 /* New Group */,
 				75220F9F1F0A89610083F823 /* Utils */,
 				75E3FD7E1F04E52800D9879B /* Resources */,
 				75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */,
@@ -151,6 +179,13 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		75FF1C3C1F30A77B0003E180 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,10 +193,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75E3FD781F04E50D00D9879B /* Build configuration list for PBXNativeTarget "makeImageMosaic" */;
 			buildPhases = (
+				16A1B65ED851B11133FCAB4D /* [CP] Check Pods Manifest.lock */,
 				75E3FD571F04E50D00D9879B /* Sources */,
 				75E3FD581F04E50D00D9879B /* Frameworks */,
 				75E3FD591F04E50D00D9879B /* Resources */,
 				75220FB31F0AB5DB0083F823 /* ShellScript */,
+				19BCF69077BAAA525FAA85E7 /* [CP] Embed Pods Frameworks */,
+				C7BEB02802A4FA66E8EA9764 /* [CP] Copy Pods Resources */,
+				75FF1C3A1F30A5C70003E180 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -176,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75E3FD7B1F04E50D00D9879B /* Build configuration list for PBXNativeTarget "makeImageMosaicTests" */;
 			buildPhases = (
+				97AB08063D95FD2D8E1E614C /* [CP] Check Pods Manifest.lock */,
 				75E3FD6B1F04E50D00D9879B /* Sources */,
 				75E3FD6C1F04E50D00D9879B /* Frameworks */,
 				75E3FD6D1F04E50D00D9879B /* Resources */,
+				5AC11D24ABA8600B00F044BE /* [CP] Embed Pods Frameworks */,
+				3ACE2ADC368B00A9788B3EF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FF1C391F30A5700003E180 /* .swiftlint.yml in Resources */,
 				75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */,
 				75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */,
 				75220F9C1F0A6C5D0083F823 /* Tom.png in Resources */,
@@ -257,6 +300,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16A1B65ED851B11133FCAB4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		19BCF69077BAAA525FAA85E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-makeImageMosaic/Pods-makeImageMosaic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ACE2ADC368B00A9788B3EF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-makeImageMosaicTests/Pods-makeImageMosaicTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AC11D24ABA8600B00F044BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-makeImageMosaicTests/Pods-makeImageMosaicTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75220FB31F0AB5DB0083F823 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +373,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		75FF1C3A1F30A5C70003E180 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/SwiftLint/swiftlint",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		97AB08063D95FD2D8E1E614C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7BEB02802A4FA66E8EA9764 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-makeImageMosaic/Pods-makeImageMosaic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -423,6 +570,7 @@
 		};
 		75E3FD791F04E50D00D9879B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56818AFEECA1B90009AD6940 /* Pods-makeImageMosaic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WVZ5Q86439;
@@ -441,6 +589,7 @@
 		};
 		75E3FD7A1F04E50D00D9879B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F68E40A8967A0B783D26D2DE /* Pods-makeImageMosaic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WVZ5Q86439;
@@ -459,6 +608,7 @@
 		};
 		75E3FD7C1F04E50D00D9879B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E098AAC963C17DD531FB03C7 /* Pods-makeImageMosaicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -474,6 +624,7 @@
 		};
 		75E3FD7D1F04E50D00D9879B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDA4043C08C9748601B835D /* Pods-makeImageMosaicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
