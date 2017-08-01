@@ -9,8 +9,8 @@
 import Foundation
 import  Alamofire
 import  UIKit
-class ImageDataFromInternet{
-    func getImage(urlName: String, onComplete: @escaping (_ data: Data)->(), onError: @escaping (_ massage: String)->()){
+class ImageDataFromInternet {
+    func getImage(urlName: String, onComplete: @escaping (_ data: Data)->Void, onError: @escaping (_ massage: String)->Void) {
         Alamofire.request(urlName)
             .responseData(queue: DispatchQueue.global(qos: .utility), completionHandler: { response in
                 switch response.result {
@@ -23,6 +23,6 @@ class ImageDataFromInternet{
                     onError(massage)
                 }
             })
-        
+
     }
 }

@@ -8,9 +8,9 @@
 
 import Foundation
 import  UIKit
-class Context{
-    
-    func getContext(image: UIImage) -> (CGContext, Array<UInt8> ){
+class Context {
+
+    func getContext(image: UIImage) -> (CGContext, Array<UInt8> ) {
         let width = image.size.width
         let height = image.size.height
         let dataSize = width * height * 4
@@ -26,5 +26,5 @@ class Context{
         context.draw(image.cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
         return (context, pixelData)
     }
-    
+
 }

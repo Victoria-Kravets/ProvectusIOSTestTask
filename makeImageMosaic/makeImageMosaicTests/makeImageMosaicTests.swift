@@ -9,18 +9,18 @@
 import XCTest
 @testable import makeImageMosaic
 
-class makeImageMosaicTests: XCTestCase {
+class MakeImageMosaicTests: XCTestCase {
     let vc = ViewController()
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testExample() {
         let arrayOfColors: Array<Array<UInt8>> = [
             [255, 0, 0, 255],
@@ -28,7 +28,7 @@ class makeImageMosaicTests: XCTestCase {
             [255, 0, 0, 255],
             [0, 0, 0, 255],
             [255, 0, 0, 255]
-            
+
         ]
         let checkingColor: Array<UInt8> = [255, 0, 0, 255]
         let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
@@ -46,9 +46,9 @@ class makeImageMosaicTests: XCTestCase {
             [0, 3, 0, 255],
             [0, 0, 0, 255],
             [255, 0, 0, 255]
-            
+
         ]
-        let checkingColor : Array<UInt8> = [0, 0, 0, 255]
+        let checkingColor: Array<UInt8> = [0, 0, 0, 255]
         let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
         XCTAssertEqual(checkingColor, resultColor)
     }
@@ -64,7 +64,7 @@ class makeImageMosaicTests: XCTestCase {
             [0, 3, 0, 255],
             [0, 0, 255, 255],
             [255, 0, 0, 255]
-            
+
         ]
         let checkingColor: Array<UInt8> = [0, 0, 255, 255]
         let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
@@ -82,13 +82,11 @@ class makeImageMosaicTests: XCTestCase {
             [0, 3, 0, 255],
             [0, 0, 0, 255],
             [255, 0, 0, 255]
-            
+
         ]
         let checkingColor: Array<UInt8> = [0, 0, 255, 255]
         let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
         XCTAssertEqual(checkingColor, resultColor)
     }
-    
-    
-    
+
 }

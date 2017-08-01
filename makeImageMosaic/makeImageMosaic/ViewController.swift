@@ -13,8 +13,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     let downloadedImage = ImageDataFromInternet()
     var image = UIImage()
     var barSize = 0
-    @IBOutlet weak var scrollView: UIScrollView!{
-        didSet{
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
             scrollView.contentSize = imageView.frame.size
             scrollView.maximumZoomScale = 4.0
             scrollView.minimumZoomScale = 0.05
@@ -33,15 +33,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
-        let successHandler = { (data: Data)-> () in
-            if data != nil{
+        let successHandler = { (data: Data)-> Void in
+            if data != nil {
                 self.image = UIImage(data: data)!
-                if self.barSize == 0{
+                if self.barSize == 0 {
                     self.imageView.image = self.image
-                }else{
+                } else {
                     let arrayOfColors = self.getArrayOfColors(image: self.image)
                     DispatchQueue.main.async {
-                        let makeMosaica = MosaicMaker(barSize: self.barSize, image: self.image)
+                        let makeMosaica = MosaicMaker(sizeOfBar: self.barSize, image: self.image)
                         let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
                         self.imageView.image = drawBar
                         self.activity.stopAnimating()
@@ -50,8 +50,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 }
             }
         }
-        
-        let errorHandler = { (massage: String)-> () in
+
+        let errorHandler = { (massage: String)-> Void in
             if massage == "failure"{
                 DispatchQueue.main.async {
                     self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
@@ -60,15 +60,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             }
         }
         downloadedImage.getImage(urlName: url, onComplete: successHandler, onError: errorHandler)
-        
+
     }
-    func createAlert(title: String, massage: String){
+    func createAlert(title: String, massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in self.navigationController?.popViewController(animated: true) }))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (_) in self.navigationController?.popViewController(animated: true) }))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>>{
+
+    func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>> {
         let size = image.size
         var height = size.height
         var width = size.width
@@ -82,25 +82,24 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 let rect = CGRect(x: x, y: y, width: sizePath, height: sizePath)
                 let cropImage: CGImage = image.cgImage!.cropping(to: rect)!
                 let contextOfOneBar = context.getContext(image: UIImage(cgImage: cropImage))
-                let colorData = transformPixelDataToColors(pixelData: contextOfOneBar.1 as! Array<UInt8>)
+                let colorData = transformPixelDataToColors(pixelData: contextOfOneBar.1)
                 arrayOfOneColor.append(colorData)
                 sizePath = CGFloat(barSize)
                 if width >= CGFloat(barSize) {
                     width -= sizePath
-                }else{
+                } else {
                     sizePath = width
                     width -= width
                 }
                 x += sizePath
-                
-                
+
             }
             arrayOfColors.append(arrayOfOneColor)
             arrayOfOneColor.removeAll()
             sizePath = CGFloat(barSize)
             if height >= CGFloat(barSize) {
                 height -= sizePath
-            }else{
+            } else {
                 sizePath = height
                 height -= height
             }
@@ -108,24 +107,23 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             x = 0
             width = size.width
         }
-        
+
         return arrayOfColors
     }
-    
-    func transformPixelDataToColors( pixelData: Array<UInt8>) -> Array<UInt8>  {
+
+    func transformPixelDataToColors( pixelData: Array<UInt8>) -> Array<UInt8> {
         var arrayOfColors = [[UInt8]]()
         var arrayOfColor = [UInt8]()
         for item in pixelData {
-            if arrayOfColors.isEmpty && arrayOfColor.isEmpty{
+            if arrayOfColors.isEmpty && arrayOfColor.isEmpty {
                 arrayOfColor.append(UInt8(item))
-            }else{
-                if arrayOfColor.count == 4{
-                    
+            } else {
+                if arrayOfColor.count == 4 {
+
                     arrayOfColors.append(arrayOfColor)
                     arrayOfColor.removeAll()
                     arrayOfColor.append(UInt8(item))
-                }
-                else{
+                } else {
                     arrayOfColor.append(UInt8(item))
                 }
             }
@@ -134,8 +132,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         let prevailColor = findPrevailColor(arrayOfColors: arrayOfColors)
         return prevailColor
     }
-    func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> Array<UInt8>{
-        var dictionaryOfColor = [String : Int]()
+    func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> Array<UInt8> {
+        var dictionaryOfColor = [String: Int]()
         var arrayOfStringColor = [String]()
         var colorStrValue = ""
         for color in arrayOfColors {
@@ -146,20 +144,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             arrayOfStringColor.append(colorStrValue)
             colorStrValue = ""
         }
-        
+
         for color in arrayOfStringColor {
-            if !dictionaryOfColor.isEmpty{
+            if !dictionaryOfColor.isEmpty {
                 for element in dictionaryOfColor {
-                    if element.key == color{
-                        dictionaryOfColor.updateValue(element.value + 1 , forKey: element.key)
-                    }
-                    else{
+                    if element.key == color {
+                        dictionaryOfColor.updateValue(element.value + 1, forKey: element.key)
+                    } else {
                         if dictionaryOfColor[color] == nil {
                             dictionaryOfColor[color] = 1
                         }
                     }
                 }
-            }else{
+            } else {
                 dictionaryOfColor[color] = 1
             }
         }
@@ -175,7 +172,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         for char in resultStr.characters {
             if char != "+"{
                 str.append(String(char))
-            }else{
+            } else {
                 arrayOfDigitColor.append(UInt8(str)!)
                 str = ""
             }
@@ -183,5 +180,5 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         arrayOfDigitColor.append(UInt8(str)!)
         return arrayOfDigitColor
     }
-    
+
 }

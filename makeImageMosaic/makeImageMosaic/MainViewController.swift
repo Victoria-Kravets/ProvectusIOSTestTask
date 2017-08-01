@@ -10,13 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
     let arrayOfBarSize = [2, 5, 10, 20]
-    var _size: Int = 2
+    var sizeOfBar: Int = 2
     var size: Int {
         get{
-            return self._size
+            return self.sizeOfBar
         }
         set(newValue){
-            self._size = newValue
+            self.sizeOfBar = newValue
         }
     }
     @IBOutlet weak var pickerView: UIPickerView!
