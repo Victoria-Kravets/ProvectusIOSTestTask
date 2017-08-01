@@ -12,7 +12,6 @@
 		75220FAB1F0AB2070083F823 /* ImageDataFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */; };
 		75220FB21F0AB5B50083F823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75220FB11F0AB5B50083F823 /* Alamofire.framework */; };
 		75220FB71F0AECCC0083F823 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FB61F0AECCC0083F823 /* MainViewController.swift */; };
-		75B565171F3099C300F0F18F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 75B565161F3099C300F0F18F /* .swiftlint.yml */; };
 		75C7B90A1F0C15950089D979 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C7B9091F0C15950089D979 /* BorderedButton.swift */; };
 		75E15E031F099E320071DBF1 /* jerry.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E15E021F099E320071DBF1 /* jerry.png */; };
 		75E3FD5F1F04E50D00D9879B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3FD5E1F04E50D00D9879B /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 		75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataFromInternet.swift; sourceTree = "<group>"; };
 		75220FB11F0AB5B50083F823 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		75220FB61F0AECCC0083F823 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		75B565161F3099C300F0F18F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		75C7B9091F0C15950089D979 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		75E15E021F099E320071DBF1 /* jerry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jerry.png; sourceTree = "<group>"; };
 		75E3FD5B1F04E50D00D9879B /* makeImageMosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeImageMosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +153,6 @@
 				75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */,
 				75220FB61F0AECCC0083F823 /* MainViewController.swift */,
 				75C7B9091F0C15950089D979 /* BorderedButton.swift */,
-				75B565161F3099C300F0F18F /* .swiftlint.yml */,
 			);
 			path = makeImageMosaic;
 			sourceTree = "<group>";
@@ -283,7 +280,6 @@
 				75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */,
 				75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */,
 				75220F9C1F0A6C5D0083F823 /* Tom.png in Resources */,
-				75B565171F3099C300F0F18F /* .swiftlint.yml in Resources */,
 				75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */,
 				75E15E031F099E320071DBF1 /* jerry.png in Resources */,
 				75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */,
