@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AssetsLibrary.ALAssetsLibrary
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

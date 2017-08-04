@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750F61841F34B7A3009CD4B1 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750F61831F34B7A3009CD4B1 /* PromiseKit.framework */; };
+		750F61871F34B933009CD4B1 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 750F61851F34B933009CD4B1 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75220F9C1F0A6C5D0083F823 /* Tom.png in Resources */ = {isa = PBXBuildFile; fileRef = 75220F9B1F0A6C5D0083F823 /* Tom.png */; };
 		75220FA11F0A897D0083F823 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FA01F0A897D0083F823 /* Context.swift */; };
 		75220FAB1F0AB2070083F823 /* ImageDataFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */; };
@@ -37,9 +39,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		750F61881F34B933009CD4B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				750F61871F34B933009CD4B1 /* PromiseKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		49A1B8256F86F12794A20685 /* Pods_makeImageMosaicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_makeImageMosaicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56818AFEECA1B90009AD6940 /* Pods-makeImageMosaic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-makeImageMosaic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-makeImageMosaic/Pods-makeImageMosaic.debug.xcconfig"; sourceTree = "<group>"; };
+		750F61831F34B7A3009CD4B1 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		750F61851F34B933009CD4B1 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		75220F9B1F0A6C5D0083F823 /* Tom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tom.png; sourceTree = "<group>"; };
 		75220FA01F0A897D0083F823 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataFromInternet.swift; sourceTree = "<group>"; };
@@ -72,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75220FB21F0AB5B50083F823 /* Alamofire.framework in Frameworks */,
+				750F61841F34B7A3009CD4B1 /* PromiseKit.framework in Frameworks */,
 				A56E7126B67C2AFFBCF40B2B /* Pods_makeImageMosaic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +128,7 @@
 		75220FB01F0AB5B50083F823 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				750F61831F34B7A3009CD4B1 /* PromiseKit.framework */,
 				75220FB11F0AB5B50083F823 /* Alamofire.framework */,
 				D596B01F6EB5A8DFD080C753 /* Pods_makeImageMosaic.framework */,
 				49A1B8256F86F12794A20685 /* Pods_makeImageMosaicTests.framework */,
@@ -119,6 +139,7 @@
 		75E3FD521F04E50D00D9879B = {
 			isa = PBXGroup;
 			children = (
+				750F61851F34B933009CD4B1 /* PromiseKit.framework */,
 				75FF1C381F30A5700003E180 /* .swiftlint.yml */,
 				75E3FD5D1F04E50D00D9879B /* makeImageMosaic */,
 				75E3FD721F04E50D00D9879B /* makeImageMosaicTests */,
@@ -198,6 +219,7 @@
 				19BCF69077BAAA525FAA85E7 /* [CP] Embed Pods Frameworks */,
 				C7BEB02802A4FA66E8EA9764 /* [CP] Copy Pods Resources */,
 				75FF1C3A1F30A5C70003E180 /* ShellScript */,
+				750F61881F34B933009CD4B1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

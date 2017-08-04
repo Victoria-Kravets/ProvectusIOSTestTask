@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDelegate {
     var url = ""
     let context = Context()
@@ -33,8 +34,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
-        let successHandler = { (data: Data)-> Void in
+        func successHandler(data: Data){
             if data != nil {
+                print(Thread.isMainThread)
                 self.image = UIImage(data: data)!
                 if self.barSize == 0 {
                     self.imageView.image = self.image
@@ -48,26 +50,26 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                         self.view.setNeedsDisplay()
                     }
                 }
+            }else{
+                self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+                print(Thread.isMainThread)
+                
             }
         }
+        
+        downloadedImage.getImage(urlName: url).then{ data in
+            //print(Thread.isMainThread) Main
+            successHandler(data: data)
 
-        let errorHandler = { (massage: String)-> Void in
-            if massage == "failure"{
-                DispatchQueue.main.async {
-                    self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
-                    print(Thread.isMainThread)
-                }
-            }
         }
-        downloadedImage.getImage(urlName: url, onComplete: successHandler, onError: errorHandler)
-
+        
     }
     func createAlert(title: String, massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (_) in self.navigationController?.popViewController(animated: true) }))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
     func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>> {
         let size = image.size
         var height = size.height
@@ -92,7 +94,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                     width -= width
                 }
                 x += sizePath
-
+                
             }
             arrayOfColors.append(arrayOfOneColor)
             arrayOfOneColor.removeAll()
@@ -107,10 +109,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             x = 0
             width = size.width
         }
-
+        
         return arrayOfColors
     }
-
+    
     func transformPixelDataToColors( pixelData: Array<UInt8>) -> Array<UInt8> {
         var arrayOfColors = [[UInt8]]()
         var arrayOfColor = [UInt8]()
@@ -119,7 +121,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 arrayOfColor.append(UInt8(item))
             } else {
                 if arrayOfColor.count == 4 {
-
+                    
                     arrayOfColors.append(arrayOfColor)
                     arrayOfColor.removeAll()
                     arrayOfColor.append(UInt8(item))
@@ -144,7 +146,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             arrayOfStringColor.append(colorStrValue)
             colorStrValue = ""
         }
-
+        
         for color in arrayOfStringColor {
             if !dictionaryOfColor.isEmpty {
                 for element in dictionaryOfColor {
@@ -180,5 +182,5 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         arrayOfDigitColor.append(UInt8(str)!)
         return arrayOfDigitColor
     }
-
+    
 }

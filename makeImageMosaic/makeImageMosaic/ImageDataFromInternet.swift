@@ -9,20 +9,26 @@
 import Foundation
 import  Alamofire
 import  UIKit
-class ImageDataFromInternet {
-    func getImage(urlName: String, onComplete: @escaping (_ data: Data)->Void, onError: @escaping (_ massage: String)->Void) {
-        Alamofire.request(urlName)
-            .responseData(queue: DispatchQueue.global(qos: .utility), completionHandler: { response in
-                switch response.result {
-                case .success:
-                    if let data = response.result.value {
-                        onComplete(data)
-                    }
-                case .failure:
-                    let massage = "failure"
-                    onError(massage)
-                }
-            })
+import PromiseKit
+import AssetsLibrary.ALAssetsLibrary
 
+struct ResponseError: Error{
+    var errorMessage: String
+}
+class ImageDataFromInternet {
+    func getImage(urlName: String) -> Promise<Data> {
+        return Promise<Data>{ fulfill, reject in
+            
+            Alamofire.request(urlName)
+                .responseData(queue: DispatchQueue.global(qos: .utility), completionHandler: { response in
+                    if let data = response.result.value {
+                        fulfill(data)
+                    }else{
+                        reject(ResponseError(errorMessage: "failure"))
+                    }
+                    
+                })
+            
+        }
     }
 }

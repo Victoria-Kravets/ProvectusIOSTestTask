@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AssetsLibrary.ALAssetsLibrary
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
     let arrayOfBarSize = [2, 5, 10, 20]
