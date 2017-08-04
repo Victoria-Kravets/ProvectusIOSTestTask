@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "makeImageMosaic/ImageDataFromInternet.swift"
@@ -22,79 +22,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "makeImageMosaic/ImageDataFromInternet.swift"
-            timestampString = "523549079.118296"
+            timestampString = "523553603.695483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "getImage(urlName:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "makeImageMosaic/ViewController.swift"
-            timestampString = "523552917.615945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "makeImageMosaic/ViewController.swift"
-            timestampString = "523552917.615945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "makeImageMosaic.ViewController.viewDidLoad () -&gt; ()"
+                  symbolName = "makeImageMosaic.ImageDataFromInternet.(getImage (urlName : Swift.String) -&gt; PromiseKit.Promise&lt;Foundation.Data&gt;).(closure #1)"
                   moduleName = "makeImageMosaic"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viktoria/Desktop/ProvectusIOSTestTask/makeImageMosaic/makeImageMosaic/ViewController.swift"
-                  timestampString = "523552986.096785"
+                  urlString = "file:///Users/viktoria/Desktop/ProvectusIOSTestTask/makeImageMosaic/makeImageMosaic/ImageDataFromInternet.swift"
+                  timestampString = "523553975.419315"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "374">
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "makeImageMosaic.ViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  symbolName = "makeImageMosaic.ImageDataFromInternet.(getImage (urlName : Swift.String) -&gt; PromiseKit.Promise&lt;Foundation.Data&gt;).(closure #1).(closure #1)"
                   moduleName = "makeImageMosaic"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viktoria/Desktop/ProvectusIOSTestTask/makeImageMosaic/makeImageMosaic/ViewController.swift"
-                  timestampString = "523552986.099649"
+                  urlString = "file:///Users/viktoria/Desktop/ProvectusIOSTestTask/makeImageMosaic/makeImageMosaic/ImageDataFromInternet.swift"
+                  timestampString = "523553975.423034"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -102,33 +70,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "makeImageMosaic/ViewController.swift"
-            timestampString = "523552917.615945"
+            filePath = "makeImageMosaic/ImageDataFromInternet.swift"
+            timestampString = "523553620.201117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "successHandler(data:)"
-            landmarkType = "9">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getImage(urlName:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "makeImageMosaic/ViewController.swift"
-            timestampString = "523552917.615945"
+            filePath = "makeImageMosaic/ImageDataFromInternet.swift"
+            timestampString = "523553735.279751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "successHandler(data:)"
-            landmarkType = "9">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getImage(urlName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "makeImageMosaic/ImageDataFromInternet.swift"
+            timestampString = "523553738.02032"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getImage(urlName:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

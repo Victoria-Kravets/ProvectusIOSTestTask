@@ -34,43 +34,37 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
-        func successHandler(data: Data){
+        func updateUI(data: Data?) {
             if data != nil {
-                print(Thread.isMainThread)
-                self.image = UIImage(data: data)!
+                self.image = UIImage(data: data!)!
                 if self.barSize == 0 {
                     self.imageView.image = self.image
                 } else {
                     let arrayOfColors = self.getArrayOfColors(image: self.image)
-                    DispatchQueue.main.async {
-                        let makeMosaica = MosaicMaker(sizeOfBar: self.barSize, image: self.image)
-                        let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
-                        self.imageView.image = drawBar
-                        self.activity.stopAnimating()
-                        self.view.setNeedsDisplay()
-                    }
+                    let makeMosaica = MosaicMaker(sizeOfBar: self.barSize, image: self.image)
+                    let drawBar = makeMosaica.draw(colorsRows: arrayOfColors)
+                    self.imageView.image = drawBar
+                    self.activity.stopAnimating()
                 }
-            }else{
-                self.createAlert(title: "Warning!", massage: "Sorry...something gone wrong, please enter valid URL and check internet connection")
+            } else {
+                let message = "Sorry...something gone wrong, please enter valid URL and check internet connection"
+                self.createAlert(title: "Warning!", massage: message)
                 print(Thread.isMainThread)
-                
             }
         }
-        
-        downloadedImage.getImage(urlName: url).then{ data in
-            //print(Thread.isMainThread) Main
-            successHandler(data: data)
-
+        downloadedImage.getImage(urlName: url).then { data in
+            updateUI(data: data)
+            }.catch {_ in
+                print("Error")
         }
-        
     }
     func createAlert(title: String, massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (_) in self.navigationController?.popViewController(animated: true) }))
+        let style = UIAlertActionStyle.default
+        alert.addAction(UIAlertAction(title: "OK", style: style, handler: { (_) in self.navigationController?.popViewController(animated: true)}))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func getArrayOfColors(image: UIImage) -> Array<Array<Array<UInt8>>> {
+    func getArrayOfColors(image: UIImage) -> [[[UInt8]]] {
         let size = image.size
         var height = size.height
         var width = size.width
@@ -94,7 +88,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                     width -= width
                 }
                 x += sizePath
-                
             }
             arrayOfColors.append(arrayOfOneColor)
             arrayOfOneColor.removeAll()
@@ -109,11 +102,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             x = 0
             width = size.width
         }
-        
         return arrayOfColors
     }
-    
-    func transformPixelDataToColors( pixelData: Array<UInt8>) -> Array<UInt8> {
+    func transformPixelDataToColors( pixelData: [UInt8]) -> [UInt8] {
         var arrayOfColors = [[UInt8]]()
         var arrayOfColor = [UInt8]()
         for item in pixelData {
@@ -121,7 +112,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                 arrayOfColor.append(UInt8(item))
             } else {
                 if arrayOfColor.count == 4 {
-                    
                     arrayOfColors.append(arrayOfColor)
                     arrayOfColor.removeAll()
                     arrayOfColor.append(UInt8(item))
@@ -134,7 +124,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         let prevailColor = findPrevailColor(arrayOfColors: arrayOfColors)
         return prevailColor
     }
-    func findPrevailColor(arrayOfColors: Array<Array<UInt8>>) -> Array<UInt8> {
+    func findPrevailColor(arrayOfColors: [[UInt8]]) -> [UInt8] {
         var dictionaryOfColor = [String: Int]()
         var arrayOfStringColor = [String]()
         var colorStrValue = ""
@@ -146,7 +136,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
             arrayOfStringColor.append(colorStrValue)
             colorStrValue = ""
         }
-        
         for color in arrayOfStringColor {
             if !dictionaryOfColor.isEmpty {
                 for element in dictionaryOfColor {
@@ -164,7 +153,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         }
         var resultColorString = dictionaryOfColor.first
         for element in dictionaryOfColor {
-            if element.value > (resultColorString?.value)! {
+            while element.value > (resultColorString?.value)! {
                 resultColorString = element
             }
         }
@@ -182,5 +171,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
         arrayOfDigitColor.append(UInt8(str)!)
         return arrayOfDigitColor
     }
-    
+}
+struct ExecuteError: Error {
+    var errorMessage: String
 }

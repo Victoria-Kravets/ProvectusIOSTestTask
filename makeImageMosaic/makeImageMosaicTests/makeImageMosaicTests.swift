@@ -10,7 +10,7 @@ import XCTest
 @testable import makeImageMosaic
 
 class MakeImageMosaicTests: XCTestCase {
-    let vc = ViewController()
+    let viewController = ViewController()
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,7 +22,7 @@ class MakeImageMosaicTests: XCTestCase {
     }
 
     func testExample() {
-        let arrayOfColors: Array<Array<UInt8>> = [
+        let arrayOfColors: [[UInt8]] = [
             [255, 0, 0, 255],
             [0, 0, 0, 255],
             [255, 0, 0, 255],
@@ -30,12 +30,12 @@ class MakeImageMosaicTests: XCTestCase {
             [255, 0, 0, 255]
 
         ]
-        let checkingColor: Array<UInt8> = [255, 0, 0, 255]
-        let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
+        let checkingColor: [UInt8] = [255, 0, 0, 255]
+        let resultColor = viewController.findPrevailColor(arrayOfColors: arrayOfColors)
         XCTAssertEqual(checkingColor, resultColor)
     }
     func testExampleCheck2() {
-        let arrayOfColors: Array<Array<UInt8>> = [
+        let arrayOfColors: [[UInt8]] = [
             [255, 0, 0, 255],
             [0, 0, 255, 255],
             [255, 0, 0, 255],
@@ -48,12 +48,12 @@ class MakeImageMosaicTests: XCTestCase {
             [255, 0, 0, 255]
 
         ]
-        let checkingColor: Array<UInt8> = [0, 0, 0, 255]
-        let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
+        let checkingColor: [UInt8] = [0, 0, 0, 255]
+        let resultColor = viewController.findPrevailColor(arrayOfColors: arrayOfColors)
         XCTAssertEqual(checkingColor, resultColor)
     }
     func testExampleCheck3() {
-        let arrayOfColors: Array<Array<UInt8>> = [
+        let arrayOfColors: [[UInt8]] = [
             [255, 0, 0, 255],
             [0, 0, 255, 255],
             [255, 0, 0, 255],
@@ -66,12 +66,12 @@ class MakeImageMosaicTests: XCTestCase {
             [255, 0, 0, 255]
 
         ]
-        let checkingColor: Array<UInt8> = [0, 0, 255, 255]
-        let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
+        let checkingColor: [UInt8] = [0, 0, 255, 255]
+        let resultColor = viewController.findPrevailColor(arrayOfColors: arrayOfColors)
         XCTAssertEqual(checkingColor, resultColor)
     }
     func testExampleCheck4() {
-        let arrayOfColors: Array<Array<UInt8>> = [
+        let arrayOfColors: [[UInt8]] = [
             [255, 0, 0, 255],
             [0, 0, 255, 255],
             [255, 0, 0, 255],
@@ -84,8 +84,8 @@ class MakeImageMosaicTests: XCTestCase {
             [255, 0, 0, 255]
 
         ]
-        let checkingColor: Array<UInt8> = [0, 0, 255, 255]
-        let resultColor = vc.findPrevailColor(arrayOfColors: arrayOfColors)
+        let checkingColor: [UInt8] = [0, 0, 255, 255]
+        let resultColor = viewController.findPrevailColor(arrayOfColors: arrayOfColors)
         XCTAssertEqual(checkingColor, resultColor)
     }
 

@@ -13,10 +13,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     let arrayOfBarSize = [2, 5, 10, 20]
     var sizeOfBar: Int = 2
     var size: Int {
-        get{
+        get {
             return self.sizeOfBar
         }
-        set(newValue){
+        set(newValue) {
             self.sizeOfBar = newValue
         }
     }
@@ -29,7 +29,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     @IBOutlet weak var originalImg1Btn: UIButton!
     @IBOutlet weak var originalImg2Btn: UIButton!
     @IBOutlet weak var originalImg3Btn: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -53,9 +52,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         super.viewDidAppear(true)
         textField.text = ""
     }
-    
 }
-extension MainViewController{
+extension MainViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -80,48 +78,38 @@ extension MainViewController{
             size = 2
         }
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "Show Image" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = textField.text!
-                vc.barSize = size
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = textField.text!
+            vc?.barSize = size
         }
         if segue.identifier == "Show mosaic 1" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
-                vc.barSize = size
-                print(size)
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
+            vc?.barSize = size
         }
         if segue.identifier == "Show mosaic 2" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
-                vc.barSize = size
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = "https://www.quizz.biz/uploads/quizz/1001087/1_E7rr7.jpg"
+            vc?.barSize = size
         }
         if segue.identifier == "Show mosaic 3" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
-                vc.barSize = size
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
+            vc?.barSize = size
         }
         if segue.identifier == "Show original image 1" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = "http://crosti.ru/patterns/00/03/f5/94338116ed/picture.jpg"
         }
         if segue.identifier == "Show original image 2" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = "http://ru.wikifur.com/w/images/7/76/%D0%9D%D1%83%2C_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B8%21_05.avi_000745.219.png"
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = "https://www.quizz.biz/uploads/quizz/1001087/1_E7rr7.jpg"
         }
         if segue.identifier == "Show original image 3" {
-            if let vc = segue.destination as? ViewController{
-                vc.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
-            }
+            let vc = segue.destination as? ViewController
+            vc?.url = "http://duck-tales.com/file/galereya/foto-i-kartinki-skrudzh-makdak/DGVsua763vo.jpg"
         }
     }
 }

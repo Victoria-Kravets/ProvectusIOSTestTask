@@ -22,7 +22,7 @@ class MosaicMaker {
         context = UIGraphicsGetCurrentContext() // reterns reference to the current graphics context
 
     }
-    func draw(colorsRows: Array<Array<Array<UInt8>>>) -> UIImage {
+    func draw(colorsRows: [[[UInt8]]]) -> UIImage {
         var x = 0
         var y = 0
         for row in colorsRows {
