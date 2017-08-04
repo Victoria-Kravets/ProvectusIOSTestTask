@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		750F61841F34B7A3009CD4B1 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750F61831F34B7A3009CD4B1 /* PromiseKit.framework */; };
 		750F61871F34B933009CD4B1 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 750F61851F34B933009CD4B1 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		750F618C1F351F77009CD4B1 /* .tailor.yml in Resources */ = {isa = PBXBuildFile; fileRef = 750F618B1F351F77009CD4B1 /* .tailor.yml */; };
 		75220F9C1F0A6C5D0083F823 /* Tom.png in Resources */ = {isa = PBXBuildFile; fileRef = 75220F9B1F0A6C5D0083F823 /* Tom.png */; };
 		75220FA11F0A897D0083F823 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FA01F0A897D0083F823 /* Context.swift */; };
 		75220FAB1F0AB2070083F823 /* ImageDataFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */; };
@@ -58,6 +59,7 @@
 		56818AFEECA1B90009AD6940 /* Pods-makeImageMosaic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-makeImageMosaic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-makeImageMosaic/Pods-makeImageMosaic.debug.xcconfig"; sourceTree = "<group>"; };
 		750F61831F34B7A3009CD4B1 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		750F61851F34B933009CD4B1 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		750F618B1F351F77009CD4B1 /* .tailor.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .tailor.yml; sourceTree = "<group>"; };
 		75220F9B1F0A6C5D0083F823 /* Tom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tom.png; sourceTree = "<group>"; };
 		75220FA01F0A897D0083F823 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		75220FAA1F0AB2070083F823 /* ImageDataFromInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataFromInternet.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		75E3FD521F04E50D00D9879B = {
 			isa = PBXGroup;
 			children = (
+				750F618B1F351F77009CD4B1 /* .tailor.yml */,
 				750F61851F34B933009CD4B1 /* PromiseKit.framework */,
 				75FF1C381F30A5700003E180 /* .swiftlint.yml */,
 				75E3FD5D1F04E50D00D9879B /* makeImageMosaic */,
@@ -220,6 +223,7 @@
 				C7BEB02802A4FA66E8EA9764 /* [CP] Copy Pods Resources */,
 				75FF1C3A1F30A5C70003E180 /* ShellScript */,
 				750F61881F34B933009CD4B1 /* Embed Frameworks */,
+				0F3A6F4A86DD61292B2A60DE /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -302,6 +306,7 @@
 				75E3FD691F04E50D00D9879B /* LaunchScreen.storyboard in Resources */,
 				75E3FD661F04E50D00D9879B /* Assets.xcassets in Resources */,
 				75220F9C1F0A6C5D0083F823 /* Tom.png in Resources */,
+				750F618C1F351F77009CD4B1 /* .tailor.yml in Resources */,
 				75E3FD641F04E50D00D9879B /* Main.storyboard in Resources */,
 				75E15E031F099E320071DBF1 /* jerry.png in Resources */,
 				75E3FD801F04E54400D9879B /* mickey_shy.gif in Resources */,
@@ -318,6 +323,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F3A6F4A86DD61292B2A60DE /* Tailor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Tailor;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
+		};
 		16A1B65ED851B11133FCAB4D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

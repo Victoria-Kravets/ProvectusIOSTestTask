@@ -27,7 +27,7 @@ class MosaicMaker {
         var y = 0
         for row in colorsRows {
             for barColor in row {
-                let rect = CGRect(x: x, y: y, width: barSize, height: barSize) //rect
+                let rect = CGRect(x: x, y: y, width: barSize, height: barSize)
                 context.addRects([rect])
                 let red: CGFloat = CGFloat(Double(barColor[0]) / 255)
                 let green: CGFloat = CGFloat(Double(barColor[1]) / 255)

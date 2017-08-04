@@ -46,17 +46,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UINavigationBarDel
                     self.imageView.image = drawBar
                     self.activity.stopAnimating()
                 }
-            } else {
-                let message = "Sorry...something gone wrong, please enter valid URL and check internet connection"
-                self.createAlert(title: "Warning!", massage: message)
-                print(Thread.isMainThread)
             }
         }
         downloadedImage.getImage(urlName: url).then { data in
             updateUI(data: data)
             }.catch {_ in
-                print("Error")
+                self.displayMessage()
         }
+    }
+    func displayMessage() {
+        let message = "Sorry...something gone wrong, please enter valid URL and check internet connection"
+        self.createAlert(title: "Warning!", massage: message)
+        print(Thread.isMainThread)
     }
     func createAlert(title: String, massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)

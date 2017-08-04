@@ -1,7 +1,7 @@
-excluded:
+exclude:
 - Carthage
 - Pods
 - Frameworks
 - makeImageMosaic/AppDelegate.swift
-
-line_length: 200
+except:
+- function-whitespace
